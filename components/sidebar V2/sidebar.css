@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: var(--sidebar-width-closed);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.container:hover,
+body.sidebar-open .container {
+  width: var(--sidebar-width-open);
+  transition: width 0.3s ease;
+}
+
+.container:hover img.logo-sidebar {
+  transform: scale(1.6);
+  transition: transform 0.3s ease;
+}
+
+img.logo-sidebar {
+  width: 50px;
+  transition: transform 0.3s ease;
+}
+
+.logo-div {
+  margin: 20px;
+}
+
+img.logo-sidebar:hover {
+  filter: brightness(1.1) contrast(1.1) saturate(1.3)
+    drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* margin-top: 20px; */
+  padding: 10px;
+  list-style-type: none;
+  width: 100%;
+}
+
+.list-item {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.link {
+  /* display: flex; */
+  /* align-items: center; */
+  /* color: rgb(133, 49, 252); */
+  /* text-decoration: none; */
+  /* transition: color 0.3s ease; */
+  /* position: relative; */
+  /* width: 100%; */
+  /* padding: 10px; */
+  /* box-sizing: border-box; */
+}
+
+.link:hover .link-content,
+.link.current .link-content {
+  color: rgb(17, 0, 86);
+  background-color: #f0eafb;
+  border-radius: 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.link:hover .link-icon,
+.link.current .link-icon {
+  filter: none;
+  transition: filter 0.3s ease;
+}
+
+.link-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+  transition: color 0.3s ease;
+}
+
+.link-icon {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  /* Add margin-right to ensure space between icon and text */
+}
+
+.link-text {
+  opacity: 0;
+  white-space: nowrap;
+  /* font-size: 18px; */
+  transition: opacity 0.3s ease;
+}
+
+.container:hover .link-text,
+body.sidebar-open .link-text {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  padding-right: 4px;
+}
