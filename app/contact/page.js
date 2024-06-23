@@ -56,7 +56,7 @@ export default function ContactPage() {
             <div className={styles.formContainer}>
               <div>
                 <span>ניתן לשלוח מייל לכתובת: </span>
-                <span className={styles.underline}>max.bakehila@gmail.com</span>
+                <span className={styles.underline}>ayw100@gmail.com</span>
               </div>
             </div>
             <Contact />

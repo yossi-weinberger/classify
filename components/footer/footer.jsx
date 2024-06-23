@@ -36,7 +36,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <ul className="footer-menu">
-          <li>© 2024 MAX Impact Israel</li>
+          <li>© classify</li>
           <li>
             <a className="accessibility" href="/accessibility">
               הצהרת נגישות
@@ -44,25 +44,13 @@ export default function Footer() {
           </li>
         </ul>
         <div className="social-icons">
-          <a
-            href="https://www.facebook.com/maximpacthub"
-            title="Facebook"
-            className="social-icon facebook"
-          >
+          <a href="" title="Facebook" className="social-icon facebook">
             <FacebookIcon />
           </a>
-          <a
-            href="https://www.youtube.com/channel/UCq96gPjZReYBq4RTKixNy4A"
-            title="YouTube"
-            className="social-icon youtube"
-          >
+          <a href="" title="YouTube" className="social-icon youtube">
             <YoutubeIcon />
           </a>
-          <a
-            href="https://www.linkedin.com/company/max-initiative/"
-            title="LinkedIn"
-            className="social-icon linkedin"
-          >
+          <a href="" title="LinkedIn" className="social-icon linkedin">
             <LinkedinIcon />
           </a>
         </div>

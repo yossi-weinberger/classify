@@ -52,6 +52,6 @@ export const accessibilityContent = [
   },
   {
     title: "נתקלתם בבעיה? צרו קשר:",
-    content: "אימייל: max.bakehila@gmail.com",
+    content: "אימייל: ayw100@gmail.com",
   },
 ];

@@ -20,19 +20,7 @@ export default function About() {
           החברתי שלהן.
         </p>
         <div className="team">
-          {" "}
-          <div className="team-member">
-            <Image
-              className="member-image"
-              src="/avi.png"
-              width={100}
-              height={100}
-              alt="member-image"
-            ></Image>
-            <p className="member-name">אבי ליאור</p>
-            <p className="member-title">מנטור</p>
-          </div>
-          <div className="team-member">
+          {/* <div className="team-member">
             <Image
               className="member-image"
               src="/hagar.png"
@@ -42,7 +30,7 @@ export default function About() {
             ></Image>
             <p className="member-name">הגר טבת</p>
             <p className="member-title">UX/UI</p>
-          </div>
+          </div> */}
           <div className="team-member">
             <Image
               className="member-image"
@@ -53,17 +41,6 @@ export default function About() {
             ></Image>
             <p className="member-name">יוסי וינברגר</p>
             <p className="member-title">פיתוח טכנולוגי </p>
-          </div>
-          <div className="team-member">
-            <Image
-              className="member-image"
-              src="/viki.png"
-              width={100}
-              height={100}
-              alt="member-image"
-            ></Image>
-            <p className="member-name">ויקטוריה גובנוב</p>
-            <p className="member-title">מנהלת מוצר</p>
           </div>
         </div>
       </div>
