@@ -68,7 +68,7 @@
 }
 .accessibility {
   position: relative;
-  color: #dbd5e6;
+  color: #c3d4d9;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -79,12 +79,12 @@
   right: 0;
   bottom: -2px;
   height: 2px;
-  background-color: #dbd5e6;
+  background-color: #c3d4d9;
   transition: width 0.3s ease;
 }
 
 .accessibility:hover {
-  color: #dbd5e6;
+  color: #c3d4d9;
 }
 
 .accessibility:hover::after {

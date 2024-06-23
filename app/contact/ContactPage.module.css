@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   position: relative;
-  background: linear-gradient(180deg, #f0eafb 0%, #d7d0e1 100%);
+  background: linear-gradient(180deg, #e8f5d6 0%, #c3d4d9 100%);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -11,14 +11,14 @@
 
 .formContainer {
   width: 400px;
-  background: linear-gradient(#fadef7, #ffffff) padding-box,
-    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+  background: linear-gradient(#e8f5d6, #ffffff) padding-box,
+    linear-gradient(145deg, transparent 35%, #246173, #d5d600) border-box;
   border: 5px solid transparent;
   padding: 10px 24px;
   font-size: 14px;
   direction: rtl;
   font-family: inherit;
-  color: #717171;
+  color: #333333;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -39,7 +39,7 @@
   position: absolute;
   left: 23.7%;
   top: 1.2%;
-  background: linear-gradient(185deg, #0fc4bf 0%, #0273af 100%);
+  background: linear-gradient(185deg, #246173 0%, #0a2620 100%);
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
   border-radius: 35px;
   overflow: hidden;
@@ -60,7 +60,6 @@
   width: 60%;
   height: 100%;
   left: -28.3%;
-  /* top: 14.5%; */
   position: relative;
 }
 
@@ -111,6 +110,7 @@ img.purple-circle {
   width: 16.2%;
   height: 17.2%;
 }
+
 .rightContent {
   width: 44.9%;
   height: 82%;
@@ -125,7 +125,7 @@ img.purple-circle {
   right: 6.3%;
   top: 0.7%;
   text-align: right;
-  color: #91229a;
+  color: #0a2620;
   font-size: 3.97vw;
   font-family: "Heebo", sans-serif;
   font-weight: 700;
@@ -160,6 +160,7 @@ img.purple-circle {
 .formBox {
   height: 85.8%;
 }
+
 .underline {
   text-decoration: underline;
 }
@@ -189,7 +190,7 @@ img.purple-circle {
 .inputGroup textarea {
   width: 300px;
   border-radius: 27px;
-  border: 1px solid #4d4d4d;
+  border: 1px solid #246173;
   padding: 8px;
 }
 
@@ -200,7 +201,7 @@ img.purple-circle {
 .submitButton {
   width: 300px;
   height: 44px;
-  background: linear-gradient(341deg, #351568 0%, #692ace 100%);
+  background: linear-gradient(341deg, #246173 0%, #0a2620 100%);
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
   border-radius: 35px;
   color: white;

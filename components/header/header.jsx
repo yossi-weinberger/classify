@@ -24,7 +24,7 @@
 //   return (
 //     <header
 //       className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}
-//       // style={{ backgroundColor: "#dbd5e6" }}
+//       // style={{ backgroundColor: "#c3d4d9" }}
 //     >
 //       <div className={styles.logoContainer}>
 //         <Image

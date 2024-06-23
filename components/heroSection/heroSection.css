@@ -2,7 +2,7 @@
   position: relative;
   padding-right: 20px;
   padding-top: 30px;
-  background-color: #dbd5e6;
+  background-color: #c3d4d9;
   min-height: calc(100vh - 45px);
   overflow: hidden;
   display: flex;
@@ -27,7 +27,7 @@ img.logo {
   position: relative;
   font-size: clamp(1.5rem, 3vw, 3.5rem);
   line-height: calc(1.1em + 0.5vw);
-  color: #91229a;
+  color: #0b2720;
   text-align: right;
   z-index: 1000;
   padding-top: 1rem;

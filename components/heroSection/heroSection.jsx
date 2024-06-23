@@ -10,7 +10,7 @@ function HeroSection() {
     <div className="hero-section">
       <div className="logo-wrapper">
         <Image
-          src="/sg-logo.svg"
+          src="/logo.svg"
           alt="logo"
           width={200}
           height={200}

@@ -39,7 +39,7 @@ export default function Sidebar() {
         <Link href="/">
           <Image
             className="logo-sidebar"
-            src="/SG-logo-modified.png"
+            src="/logo.png"
             alt="Logo"
             width="40"
             height="40"

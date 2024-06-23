@@ -29,7 +29,7 @@
   flex-direction: column;
   height: 400px;
   padding: 25px;
-  border: 1.5px solid rgb(143, 0, 0);
+  border: 1.5px solid #0f3849;
   border-radius: 25px;
   cursor: pointer;
   transition: 200ms ease;
@@ -37,7 +37,7 @@
 }
 
 .grid-item:hover {
-  border: 2px solid rgb(143, 0, 0);
+  border: 2px solid #0f3849;
   transition: 200ms ease;
   height: 410px;
 }
@@ -80,7 +80,7 @@
   width: 100%;
   height: 40px;
   border-radius: 10px;
-  border: 3px solid rgb(143, 0, 0);
+  border: 3px solid #0f3849;
   padding: 5px;
   margin: 5px;
   font-size: 15px;
@@ -88,6 +88,6 @@
 }
 
 .grid-item button:hover {
-  background-color: rgb(143, 0, 0);
+  background-color: #0f3849;
   transition: 200ms ease;
 }

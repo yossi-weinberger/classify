@@ -131,7 +131,7 @@ body {
   position: relative;
   transition: padding-right 0.3s ease;
   color: rgb(var(--foreground-rgb));
-  background-color: #ece6f7;
+  background-color: #c3d4d9;
   /* background: linear-gradient(
       to bottom,
       transparent,

@@ -7,13 +7,13 @@
   font-family: "Heebo", sans-serif;
   line-height: 1.6;
   text-align: right;
-  background-color: #dbd5e6;
+  background-color: #c3d4d9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
 
 .accessibility-page .content {
-  background-color: #dbd5e6;
+  background-color: #c3d4d9;
   padding: 30px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

@@ -12,7 +12,7 @@ const HomeIcon = () => (
 );
 const StudentsIcon = () => (
   <Image
-    src="/icons/graphs.svg"
+    src="/icons/students.svg"
     alt="Dashboard"
     width={24}
     height={24}
