@@ -116,21 +116,26 @@ img.screen-image {
 }
 
 .cta-button {
-  background: linear-gradient(341deg, #351568 -7.4%, #692ace 91.35%);
-  color: #fff;
   font-family: "Heebo", sans-serif;
   font-size: clamp(0.7rem, 2vw, 1rem);
   padding: 0.8em 3.5em;
   border-radius: 2em;
+  color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   letter-spacing: 1.15px;
+  background: linear-gradient(#246173, #0a2620) padding-box;
   transition: background-color 0.3s ease;
   white-space: nowrap;
-}
-.cta-button:hover {
-  background: linear-gradient(341deg, #210c3f -7.4%, #4b1d8f 91.35%);
+  transition: 0.3s ease;
   cursor: pointer;
 }
+
+.cta-button:hover {
+  background: linear-gradient(#1e5160, #051310) padding-box;
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+
 @media screen and (max-width: 767px) {
   .hero-section {
     padding-right: 0;

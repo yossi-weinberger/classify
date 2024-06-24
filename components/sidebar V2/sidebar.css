@@ -22,11 +22,15 @@ body.sidebar-open .container {
 
 .container:hover img.logo-sidebar {
   transform: scale(1.6);
+  /* border: #fdfdfd;
+  border-radius: 20px;
+  border-style: solid; */
   transition: transform 0.3s ease;
 }
 
 img.logo-sidebar {
-  width: 50px;
+  width: 60px;
+  height: auto;
   transition: transform 0.3s ease;
 }
 
@@ -70,7 +74,7 @@ img.logo-sidebar:hover {
 .link:hover .link-content,
 .link.current .link-content {
   color: rgb(17, 0, 86);
-  background-color: #f0eafb;
+  background-color: #c3d4d9;
   border-radius: 10px;
   transition: color 0.3s ease, background-color 0.3s ease;
 }

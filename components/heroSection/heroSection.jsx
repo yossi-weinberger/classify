@@ -23,13 +23,13 @@ function HeroSection() {
         />
       </div>
       <h1 className="site-title">
-        פלטפורמת ניתוח נתונים <br></br>להגדלת האימפקט החברתי
+        פלטפורמת ניהול תלמידים <br></br>וניתוח דפוסי התקדמות
       </h1>
       <div className="hero-content">
         <div className="image-column">
           <div className="image-wrapper">
             <Image
-              src="/screens.png"
+              src="/hero.png"
               alt="Screens"
               width={1200}
               height={1200}
@@ -40,7 +40,7 @@ function HeroSection() {
                 objectFit: "contain",
               }}
             />
-            <Image
+            {/* <Image
               src="/circle.svg"
               alt="purple-circle"
               width={1200}
@@ -51,16 +51,16 @@ function HeroSection() {
                 height: "auto",
                 objectFit: "contain",
               }}
-            />
+            /> */}
           </div>
         </div>
         <div className="content-column">
           <div className="content-wrapper">
             <div className="features-grid">
               {[
-                "ידידותית למשתמש",
-                "קלה ללמידה",
-                "מותאמת לצרכי העמותה",
+                "ניהול תלמידים חכם",
+                "ממשק אינטואיטבי וידידותי",
+                "שמירה על פרטיות המידע",
                 "ניתוח נתונים חכם",
                 "מעקב לאורך זמן",
               ].map((text, index) => (

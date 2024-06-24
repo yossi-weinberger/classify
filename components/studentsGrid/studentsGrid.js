@@ -52,7 +52,7 @@ function GridItem({ item, classInfo }) {
           <h2>
             {item.firstName} {item.lastName}
           </h2>
-          <p>תאריך לידה: {item.dateOfBirth}</p>
+          <p>ת.ז: {item.idil}</p>
           <div className="read-more">
             <button>פרטים נוספים</button>
           </div>
