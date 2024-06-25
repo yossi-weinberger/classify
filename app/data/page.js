@@ -19,9 +19,10 @@ export default function DataPage() {
       {isLoading && <Loading />}
 
       <iframe
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTS3-UFES5pBTP9PGl81lBq2lpZF_2UuAEvadPMwCMa0B0FgLYvSFC1V5XRI_EYl_Drg4E-fSYYQfKq/pubhtml"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTwqKOSMsVEHnRJ6-lCLDH_U763BcpH83n4FWFeCsOW9olqYkl6qmAoqEQLSfmj0pa2AkLut0yCr4X8/pubhtml"
         width="100%"
         height="100%"
+        title="data"
         style={{
           border: "none",
           display: isLoading ? "none" : "block",
