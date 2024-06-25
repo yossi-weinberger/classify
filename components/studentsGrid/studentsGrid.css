@@ -86,10 +86,14 @@
   margin: 5px;
   font-size: 15px;
   cursor: pointer;
+  font-family: heebo, san sarif;
 }
 
 .grid-item button:hover {
   background-color: #0f3849;
   color: aliceblue;
   transition: 200ms ease;
+}
+.student-id {
+  text-align: center;
 }
