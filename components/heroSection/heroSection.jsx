@@ -29,7 +29,7 @@ function HeroSection() {
         <div className="image-column">
           <div className="image-wrapper">
             <Image
-              src="/hero.png"
+              src="/reports.png"
               alt="Screens"
               width={1200}
               height={1200}
