@@ -1,25 +1,47 @@
 import "./sort-search.css";
+
 export function Sort_search({ sortBy, setSortBy, setSearch }) {
   return (
     <div className="toolbar">
       <select
         className="toolbar-element select"
-        student={sortBy}
-        onChange={(e) => setSortBy(parseInt(e.target.student))}
+        value={sortBy}
+        onChange={(e) => setSortBy(parseInt(e.target.value))}
       >
-        <option student={0}>א-ת</option>
-        <option student={1}>ת-א</option>
-        {/* <option student={2}>price from cheap</option> */}
-        {/* <option student={3}>price from high</option> */}
+        <option value={0}>א-ת</option>
+        <option value={1}>ת-א</option>
       </select>
       <input
         className="toolbar-element input"
         placeholder="חיפוש..."
-        onChange={(e) => setSearch(e.target.student)}
+        onChange={(e) => setSearch(e.target.value)}
       />
     </div>
   );
 }
+
+// import "./sort-search.css";
+// export function Sort_search({ sortBy, setSortBy, setSearch }) {
+//   return (
+//     <div className="toolbar">
+//       <select
+//         className="toolbar-element select"
+//         student={sortBy}
+//         onChange={(e) => setSortBy(parseInt(e.target.student))}
+//       >
+//         <option student={0}>א-ת</option>
+//         <option student={1}>ת-א</option>
+//         {/* <option student={2}>price from cheap</option> */}
+//         {/* <option student={3}>price from high</option> */}
+//       </select>
+//       <input
+//         className="toolbar-element input"
+//         placeholder="חיפוש..."
+//         onChange={(e) => setSearch(e.target.student)}
+//       />
+//     </div>
+//   );
+// }
 
 {
   /* <select
