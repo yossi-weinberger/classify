@@ -1,22 +1,38 @@
+"use client";
+
 import React, { useState } from "react";
 import styles from "./StudentDetails.module.css";
+import { addPersonalNoteToStudent } from "../../functions/apiCalls.js";
 
 function formatDate(dateString) {
-  const date = new Date(dateString);
-  const day = date.getDate().toString().padStart(2, "0");
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const year = date.getFullYear();
+  const [year, month, day] = dateString.split("-");
   return `${day}/${month}/${year}`;
 }
 
-export default function PersonalNotes({ notes, onAddNote }) {
+export default function PersonalNotes({ idil, notes, onAddNote }) {
   const [newNote, setNewNote] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (newNote.trim()) {
-      onAddNote(newNote);
-      setNewNote("");
+      setIsLoading(true);
+      setError(null);
+      try {
+        const result = await addPersonalNoteToStudent(idil, newNote);
+        if (result.status === "success") {
+          onAddNote(result.data);
+          setNewNote("");
+        } else {
+          throw new Error(result.message || "Failed to add note");
+        }
+      } catch (err) {
+        setError(err.message || "Failed to add note. Please try again.");
+        console.error("Error in handleSubmit:", err);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -41,27 +57,14 @@ export default function PersonalNotes({ notes, onAddNote }) {
             onChange={(e) => setNewNote(e.target.value)}
             placeholder="הכנס הערה חדשה"
             rows="4"
+            disabled={isLoading}
           />
-          <button type="submit">הוסף הערה</button>
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? "מוסיף..." : "הוסף הערה"}
+          </button>
         </form>
+        {error && <p className={styles.errorMessage}>{error}</p>}
       </div>
     </div>
   );
 }
-
-// import styles from "./StudentDetails.module.css";
-
-// export default function PersonalNotes({ notes }) {
-//   return (
-//     <div className={styles.personalNotes}>
-//       <h3>הערות אישיות:</h3>
-//       <ul>
-//         {notes.map((note, index) => (
-//           <li key={index}>
-//             <strong>{note.date}:</strong> {note.note}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }

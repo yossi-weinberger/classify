@@ -9,21 +9,22 @@ import styles from "./StudentDetails.module.css";
 
 export default function StudentDetails({ student, classInfo, updateStudent }) {
   const [activeTab, setActiveTab] = useState("details");
+  const [localStudent, setLocalStudent] = useState(student);
 
-  if (!student || !classInfo) return <div>לא נמצא מידע</div>;
+  if (!localStudent || !classInfo) return <div>לא נמצא מידע</div>;
 
-  const addNote = (newNoteText) => {
-    const newNote = {
-      date: new Date().toISOString().split("T")[0],
-      note: newNoteText,
-    };
-    const updatedNotes = [...student.personalNotes, newNote];
-    updateStudent({ ...student, personalNotes: updatedNotes });
+  const addNote = (newNote) => {
+    const updatedNotes = [...localStudent.personalNotes, newNote];
+    const updatedStudent = { ...localStudent, personalNotes: updatedNotes };
+    setLocalStudent(updatedStudent);
+    if (typeof updateStudent === "function") {
+      updateStudent(updatedStudent);
+    }
   };
 
   return (
     <div className={styles.studentDetails}>
-      <StudentHeader student={student} classInfo={classInfo} />
+      <StudentHeader student={localStudent} classInfo={classInfo} />
       <div className={styles.tabs}>
         <button
           className={`${styles.tab} ${
@@ -51,66 +52,16 @@ export default function StudentDetails({ student, classInfo, updateStudent }) {
         </button>
       </div>
       <div className={styles.tabContent}>
-        {activeTab === "details" && <PersonalDetails student={student} />}
+        {activeTab === "details" && <PersonalDetails student={localStudent} />}
         {activeTab === "notes" && (
-          <PersonalNotes notes={student.personalNotes} onAddNote={addNote} />
+          <PersonalNotes
+            idil={localStudent.idil}
+            notes={localStudent.personalNotes}
+            onAddNote={addNote}
+          />
         )}
-        {activeTab === "progress" && <ProgressChart student={student} />}
+        {activeTab === "progress" && <ProgressChart student={localStudent} />}
       </div>
     </div>
   );
 }
-
-// "use client";
-
-// import React, { useState } from "react";
-// import StudentHeader from "./StudentHeader";
-// import PersonalDetails from "./PersonalDetails";
-// import PersonalNotes from "./PersonalNotes";
-// import ProgressChart from "./ProgressChart";
-// import styles from "./StudentDetails.module.css";
-
-// export default function StudentDetails({ student, classInfo }) {
-//   const [activeTab, setActiveTab] = useState("details");
-
-//   if (!student || !classInfo) return <div>לא נמצא מידע</div>;
-
-//   return (
-//     <div className={styles.studentDetails}>
-//       <StudentHeader student={student} classInfo={classInfo} />
-//       <div className={styles.tabs}>
-//         <button
-//           className={`${styles.tab} ${
-//             activeTab === "details" ? styles.active : ""
-//           }`}
-//           onClick={() => setActiveTab("details")}
-//         >
-//           פרטים אישיים
-//         </button>
-//         <button
-//           className={`${styles.tab} ${
-//             activeTab === "notes" ? styles.active : ""
-//           }`}
-//           onClick={() => setActiveTab("notes")}
-//         >
-//           הערות אישיות
-//         </button>
-//         <button
-//           className={`${styles.tab} ${
-//             activeTab === "progress" ? styles.active : ""
-//           }`}
-//           onClick={() => setActiveTab("progress")}
-//         >
-//           התקדמות
-//         </button>
-//       </div>
-//       <div className={styles.tabContent}>
-//         {activeTab === "details" && <PersonalDetails student={student} />}
-//         {activeTab === "notes" && (
-//           <PersonalNotes notes={student.personalNotes} />
-//         )}
-//         {activeTab === "progress" && <ProgressChart student={student} />}
-//       </div>
-//     </div>
-//   );
-// }

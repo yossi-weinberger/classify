@@ -22,11 +22,6 @@ const nextConfig = {
   },
 };
 
-// We'll handle i18n configuration here if needed
-// const i18n = {
-//   // Add your i18n configuration here
-// };
-
 // export { i18n };
 export default nextConfig;
 

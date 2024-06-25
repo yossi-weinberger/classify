@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default async function SchoolClassesPage() {
   const SchoolClasses = await getAllSchoolClasses();
-  console.log(SchoolClasses);
+  // console.log(SchoolClasses);
 
   return (
     <div>

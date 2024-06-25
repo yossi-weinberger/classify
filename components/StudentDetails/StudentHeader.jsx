@@ -7,11 +7,11 @@ const StudentHeader = ({ student, classInfo }) => {
     <div className={styles.studentHeader}>
       <div className={styles.studentImage}>
         <Image
-          src={student.img || "/placeholder-student.jpg"}
+          src={student.img}
           alt={`תמונה של ${student.firstName} ${student.lastName}`}
           width={200}
           height={200}
-          layout="responsive"
+          style={{ width: "100%", height: "auto" }} // זה מחליף את layout="responsive"
         />
       </div>
       <div className={styles.studentInfo}>

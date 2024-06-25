@@ -1,5 +1,6 @@
 div.toolbar {
   display: flex;
+  direction: rtl;
 }
 
 .toolbar-element {
