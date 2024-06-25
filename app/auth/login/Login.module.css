@@ -1,8 +1,8 @@
 .container {
-  background-image: url("/sg-logo.svg");
-  background-size: 50%;
+  background-image: url("/logo.png");
+  background-size: 55%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center top;
   height: 100vh;
   display: flex;
   justify-content: center;

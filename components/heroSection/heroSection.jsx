@@ -10,10 +10,10 @@ function HeroSection() {
     <div className="hero-section">
       <div className="logo-wrapper">
         <Image
-          src="/logo.svg"
+          src="/logoWide.png"
           alt="logo"
-          width={200}
-          height={200}
+          width={400}
+          height={400}
           className="logo"
           style={{
             maxWidth: "100%",

@@ -35,7 +35,7 @@ export async function getAllSchoolClasses() {
 export async function getStudentsByClassId(classId) {
   try {
     const url = `${SERVER_URL}/classes/${classId}`;
-    console.log("Fetching from URL:", url);
+    // console.log("Fetching from URL:", url);
 
     const response = await fetch(url, {
       headers: {
@@ -54,7 +54,7 @@ export async function getStudentsByClassId(classId) {
     }
 
     const data = await response.json();
-    console.log("Received data:", JSON.stringify(data, null, 2));
+    // console.log("Received data:", JSON.stringify(data, null, 2));
     return data;
   } catch (error) {
     console.error("Error in getStudentsByClassId:", error);
@@ -67,7 +67,7 @@ export async function getStudentByClassAndStudentId(classId, studentId) {
       classId
     )}/${encodeURIComponent(studentId)}`;
 
-    console.log("Fetching from URL:", url);
+    // console.log("Fetching from URL:", url);
 
     const response = await fetch(url, {
       headers: {
@@ -82,7 +82,7 @@ export async function getStudentByClassAndStudentId(classId, studentId) {
     }
 
     const data = await response.json();
-    console.log("Received data:", JSON.stringify(data, null, 2));
+    // console.log("Received data:", JSON.stringify(data, null, 2));
     return data;
   } catch (error) {
     console.error("Error fetching student:", error);

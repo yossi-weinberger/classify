@@ -55,3 +55,29 @@
   padding: 20px;
   border-radius: 5px;
 }
+
+.studentHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.studentImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 25%;
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.studentInfo {
+  flex: 1;
+}
+
+.studentInfo h2 {
+  margin: 0 0 10px 0;
+}
+
+.studentInfo p {
+  margin: 0 0 5px 0;
+}

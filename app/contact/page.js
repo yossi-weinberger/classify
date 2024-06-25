@@ -9,13 +9,13 @@ export default function ContactPage() {
       <div className={styles.contentWrapper}>
         <div className={styles.leftBackground}>
           <div className={styles.purpleCircle}>
-            <Image
+            {/* <Image
               src="/circle.svg"
               alt="Purple circle"
               width={699}
               height={699}
               className="purple-circle"
-            />
+            /> */}
           </div>
           <div className={styles.topRightIcon}>
             <Image

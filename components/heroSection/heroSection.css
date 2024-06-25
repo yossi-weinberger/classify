@@ -17,10 +17,11 @@
 }
 
 img.logo {
-  /* margin-bottom: 20px; */
-  width: 190px;
+  margin-bottom: 10px;
+  /* height: 190px; */
   position: relative;
-  left: calc(50vw - var(--sidebar-width-closed));
+  left: calc(50% + (var(--sidebar-width-closed) / 2));
+  transform: translateX(calc(-50%)); /* מזיז 100px נוספים שמאלה */
 }
 
 .site-title {
@@ -91,8 +92,8 @@ img.screen-image {
   display: flex;
   flex-direction: column;
   /* gap: 0.1rem; */
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   align-items: flex-end;
 }
 
@@ -100,7 +101,7 @@ img.screen-image {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 11px;
 }
 
 .feature-icon {
@@ -111,7 +112,7 @@ img.screen-image {
 
 .feature-text {
   font-size: clamp(0.875rem, 2.5vw, 1.5rem);
-  line-height: calc(1.2em + 0.3vw);
+  line-height: calc(1.1em + 0.3vw);
   color: #333;
 }
 
@@ -153,7 +154,7 @@ img.screen-image {
   }
 
   img.logo {
-    width: 150px;
+    height: 150px;
     left: 0;
     margin-bottom: 20px;
   }

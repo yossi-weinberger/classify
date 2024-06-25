@@ -46,9 +46,7 @@ export default function StudentDetails({ student, classInfo }) {
         {activeTab === "notes" && (
           <PersonalNotes notes={student.personalNotes} />
         )}
-        {activeTab === "progress" && (
-          <ProgressChart progressData={student.progressData} />
-        )}
+        {activeTab === "progress" && <ProgressChart student={student} />}
       </div>
     </div>
   );

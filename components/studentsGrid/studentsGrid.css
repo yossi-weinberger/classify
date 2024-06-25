@@ -89,6 +89,7 @@
 }
 
 .grid-item button:hover {
-  background-color: rgb#0f3849;
+  background-color: #0f3849;
+  color: aliceblue;
   transition: 200ms ease;
 }

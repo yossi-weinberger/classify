@@ -38,7 +38,7 @@ export default function Dashboard() {
         >
           <iframe
             className="dashboard"
-            src="https://lookerstudio.google.com/embed/reporting/820184df-1d30-4f94-8a6b-0a3fe4f57366/page/p_kf9sel82hd"
+            src="https://lookerstudio.google.com/embed/reporting/9c2b76f3-eac9-46b6-a2e2-8017778ea6b4/page/p_kf9sel82hd"
             frameBorder="0"
             allowFullScreen
             sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
