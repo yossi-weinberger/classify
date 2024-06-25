@@ -8,7 +8,7 @@ const StudentHeader = ({ student, classInfo }) => {
       <div className={styles.studentImage}>
         <Image
           src={student.img || "/placeholder-student.jpg"}
-          alt={`תמונה של ${student.name}`}
+          alt={`תמונה של ${student.firstName} ${student.lastName}`}
           width={200}
           height={200}
           layout="responsive"

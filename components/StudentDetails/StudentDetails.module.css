@@ -81,3 +81,74 @@
 .studentInfo p {
   margin: 0 0 5px 0;
 }
+
+/* design for students notes*/
+
+.personalNotesContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.existingNotes {
+  flex: 2;
+}
+
+.newNoteForm {
+  flex: 1;
+  position: sticky;
+  top: 20px;
+}
+
+.existingNotes ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.noteItem {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.noteDate {
+  display: block;
+  font-weight: bold;
+  color: #064f3b;
+  margin-bottom: 5px;
+}
+
+.noteText {
+  display: block;
+  color: #333;
+}
+
+.newNoteForm form {
+  display: flex;
+  flex-direction: column;
+}
+
+.newNoteForm textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.newNoteForm button {
+  padding: 10px;
+  background-color: #0c8464;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.newNoteForm button:hover {
+  background-color: #064f3b;
+}
