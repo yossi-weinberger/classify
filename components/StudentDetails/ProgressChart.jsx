@@ -21,8 +21,8 @@ export default function ProgressChart({ student }) {
     const encodedParams = encodeURIComponent(paramsString);
 
     const fullUrl = `${baseUrl}?params=${encodedParams}`;
-    console.log("Generated URL:", fullUrl);
-    console.log("Student ID used for filtering:", student.idil);
+    // console.log("Generated URL:", fullUrl);
+    // console.log("Student ID used for filtering:", student.idil);
 
     setUrl(fullUrl);
   }, [student]);
