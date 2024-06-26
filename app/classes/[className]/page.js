@@ -28,16 +28,3 @@ export default async function StudentsPage({ params: { className } }) {
     );
   }
 }
-
-// import studentsGrid from "@/components/studentsGrid/studentsGrid";
-// import { getstudentsByclassName } from "@/functions/apiCalls";
-
-// export default async function studentsPage({ params: { className } }) {
-//   const students = await getstudentsByclassName(className);
-
-//   return (
-//     <div>
-//       <studentsGrid students={students.data} />
-//     </div>
-//   );
-// }

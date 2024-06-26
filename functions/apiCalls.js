@@ -70,6 +70,7 @@ export async function getStudentByClassAndStudentId(classId, studentId) {
     // console.log("Fetching from URL:", url);
 
     const response = await fetch(url, {
+      cache: "no-cache",
       headers: {
         Authorization: process.env.BEARER_TOKEN,
       },

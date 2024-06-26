@@ -40,18 +40,6 @@ function HeroSection() {
                 objectFit: "contain",
               }}
             />
-            {/* <Image
-              src="/circle.svg"
-              alt="purple-circle"
-              width={1200}
-              height={1200}
-              className="purple-circle"
-              style={{
-                maxWidth: "100%",
-                height: "auto",
-                objectFit: "contain",
-              }}
-            /> */}
           </div>
         </div>
         <div className="content-column">
