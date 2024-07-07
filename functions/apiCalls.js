@@ -37,6 +37,7 @@ export async function getStudentsByClassId(classId) {
     // console.log("Fetching from URL:", url);
 
     const response = await fetch(url, {
+      cache: "no-cache",
       headers: {
         Authorization: process.env.BEARER_TOKEN,
       },
