@@ -49,8 +49,8 @@ function HeroSection() {
                 "ניהול תלמידים חכם",
                 "ממשק אינטואיטבי וידידותי",
                 "שמירה על פרטיות המידע",
-                "ניתוח נתונים חכם",
-                "מעקב לאורך זמן",
+                "קבלת החלטות מבוססת נתונים",
+                "ניתוח פרטני לכל תלמיד",
               ].map((text, index) => (
                 <div key={index} className="feature">
                   <div className="feature-text">{text}</div>

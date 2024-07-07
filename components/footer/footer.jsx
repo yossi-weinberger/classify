@@ -36,7 +36,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <ul className="footer-menu">
-          <li>© classify</li>
+          <li>© classify 2024</li>
           <li>
             <a className="accessibility" href="/accessibility">
               הצהרת נגישות

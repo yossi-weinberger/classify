@@ -120,7 +120,7 @@ img.screen-image {
   font-family: "Heebo", sans-serif;
   font-size: clamp(0.7rem, 2vw, 1rem);
   padding: 0.8em 3.5em;
-  border-radius: 2em;
+  border-radius: 1em;
   color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   letter-spacing: 1.15px;

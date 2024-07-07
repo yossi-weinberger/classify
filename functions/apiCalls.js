@@ -100,7 +100,7 @@ export async function addPersonalNoteToStudent(idil, note) {
   }
 
   try {
-    const url = `${SERVER_URL}/classes/students/${idil}/notes`;
+    const url = `${SERVER_URL}/students/${idil}/notes`;
     console.log("Sending request to:", url);
     console.log("Note text:", note);
     console.log("Bearer Token:", process.env.NEXT_PUBLIC_BEARER_TOKEN);
@@ -132,6 +132,44 @@ export async function addPersonalNoteToStudent(idil, note) {
   }
 }
 
+export async function deleteStudent(idil) {
+  try {
+    const response = await fetch(`${SERVER_URL}/students/${idil}`, {
+      method: "DELETE",
+      cache: "no-cache",
+      headers: {
+        Authorization: process.env.NEXT_PUBLIC_BEARER_TOKEN,
+        "Content-Type": "application/json",
+      },
+    });
+
+    let errorMessage = `Failed to delete student. Status: ${response.status}`;
+
+    if (!response.ok) {
+      try {
+        // Try to parse error message from response
+        const errorData = await response.json();
+        errorMessage += ` - ${errorData.message || JSON.stringify(errorData)}`;
+      } catch (jsonError) {
+        // If parsing JSON fails, use text content
+        const textContent = await response.text();
+        errorMessage += ` - ${textContent}`;
+      }
+
+      throw new Error(errorMessage);
+    }
+
+    const data = await response.json();
+    console.log(
+      "Response data from deleteStudent:",
+      JSON.stringify(data, null, 2)
+    );
+    return data;
+  } catch (error) {
+    console.error("Error in deleteStudent:", error);
+    throw error; // Re-throw the error for the component to handle
+  }
+}
 // export async function addPersonalNoteToStudent(idil, noteText) {
 //   console.log("addPersonalNoteToStudent called with:", { idil, noteText });
 //   try {

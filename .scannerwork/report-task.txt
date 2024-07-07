@@ -1,0 +1,6 @@
+projectKey=Classify
+serverUrl=http://localhost:9000
+serverVersion=10.5.1.90531
+dashboardUrl=http://localhost:9000/dashboard?id=Classify
+ceTaskId=ea442c5d-3b46-4681-b1f5-0bad7d1faaaf
+ceTaskUrl=http://localhost:9000/api/ce/task?id=ea442c5d-3b46-4681-b1f5-0bad7d1faaaf
