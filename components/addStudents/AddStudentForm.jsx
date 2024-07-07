@@ -29,6 +29,7 @@ export default function AddStudentForm() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name.includes(".")) {
+      // טיפול בשדות מקוננים (כתובת)
       const [parent, child] = name.split(".");
       setFormData((prev) => ({
         ...prev,
@@ -38,18 +39,21 @@ export default function AddStudentForm() {
         },
       }));
     } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
+      // טיפול בשדות רגילים
+      setFormData((prev) => ({
+        ...prev,
+        [name]: name === "idil" ? (value === "" ? "" : Number(value)) : value,
+      }));
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null);
-    setSuccess(false);
-
     try {
-      const result = await addStudent(formData);
-      console.log("Student added successfully:", result);
+      const result = await addStudent({
+        ...formData,
+        idil: Number(formData.idil),
+      });
       setSuccess(
         `התלמיד ${formData.firstName} ${formData.lastName} נוסף בהצלחה!`
       );

@@ -56,7 +56,7 @@ export default function StudentDetails({
         >
           התקדמות
         </button>
-        {/* <DeleteStudent idil={localStudent.idil} onDelete={onDeleteStudent} /> */}
+        <DeleteStudent idil={localStudent.idil} onDelete={onDeleteStudent} />
       </div>
       <div className={styles.tabContent}>
         {activeTab === "details" && <PersonalDetails student={localStudent} />}
