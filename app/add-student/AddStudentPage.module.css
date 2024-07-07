@@ -1,0 +1,131 @@
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(180deg, #e8f5d6 0%, #c3d4d9 100%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 1512px;
+  position: relative;
+  height: 100%;
+  min-height: 982px;
+}
+
+.leftBackground {
+  width: 60%;
+  height: 100%;
+  left: -28.3%;
+  position: absolute;
+}
+
+.topRightIcon,
+.middleRightIcon,
+.bottomRightIcon,
+.bottomLeftIcon {
+  position: absolute;
+}
+
+.icon {
+  width: 80%;
+}
+
+.topRightIcon {
+  left: 71.6%;
+  top: 4.7%;
+  /* width: 10.2%; */
+  /* height: 17.2%; */
+}
+
+.middleRightIcon {
+  left: 71.6%;
+  top: 27.2%;
+  /* width: 16.2%;
+  height: 17.2%; */
+}
+
+.bottomRightIcon {
+  left: 71.6%;
+  top: 55.6%;
+  /* width: 16.2%;
+  height: 17.2%; */
+}
+
+.bottomLeftIcon {
+  left: 71.6%;
+  top: 78.2%;
+  /* width: 16.2%;
+  height: 17.2%; */
+}
+
+.rightContent {
+  width: 44.9%;
+  right: 27.6%;
+  top: 5%; /* Changed from 9% to 5% to reduce the gap */
+  position: absolute;
+  height: 87%; /* Increased from 82% to 87% to compensate for the reduced top */
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  width: 100%;
+  text-align: right;
+  color: #0a2620;
+  font-size: 2.5rem;
+  font-family: "Heebo", sans-serif;
+  font-weight: 700;
+  line-height: 1.33;
+  margin-bottom: 10px; /* Reduced from 20px to 10px */
+}
+
+.formWrapper {
+  flex-grow: 1;
+  overflow-y: visible;
+}
+
+.formContainer {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 20px;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .contentWrapper {
+    min-height: auto;
+  }
+
+  .leftBackground {
+    display: none;
+  }
+
+  .rightContent {
+    width: 90%;
+    position: relative;
+    right: auto;
+    top: auto;
+    margin: 20px auto;
+    height: auto;
+  }
+
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .formWrapper {
+    margin-top: 20px;
+  }
+}
