@@ -1,11 +1,63 @@
 div.toolbar {
   display: flex;
   direction: rtl;
+  align-items: center;
+  justify-content: right;
 }
 
 .toolbar-element {
+  font-family: "Heebo", sans-serif;
   border-radius: 10px;
-  border: 5px solid rgb#0f3849;
+  border: #0f3849 solid 2px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: white;
+  transition: 500ms ease;
+
+  /* הוספת צל לכפתורים */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* אפקט הרמה בעת מעבר עכבר */
+.toolbar-element:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* אפקט לחיצה */
+.toolbar-element:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(1px);
+}
+
+input.toolbar-element.input:focus {
+  flex-grow: 1;
+  transition: 500ms ease;
+}
+
+select {
+  width: 21%;
+}
+
+button.toolbar-element.add-new:hover {
+  background-color: #0f3849;
+  color: aliceblue;
+  transition: 200ms ease;
+}
+
+/* div.toolbar {
+  display: flex;
+  direction: rtl;
+  align-items: center;
+  justify-content: right;
+}
+
+.toolbar-element {
+  font-family: "Heebo", sans-serif;
+  border-radius: 10px;
+  border: #0f3849 solid 2px;
   padding: 10px;
   margin: 10px;
   font-size: 15px;
@@ -23,3 +75,11 @@ input.toolbar-element.input:focus {
 select {
   width: 21%;
 }
+
+
+button.toolbar-element.add-new:hover {
+  background-color: #0f3849;
+  color: aliceblue;
+  transition: 200ms ease;
+}
+ */

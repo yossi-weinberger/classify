@@ -1,8 +1,12 @@
 import "./sort-search.css";
+import Link from "next/link";
 
 export function Sort_search({ sortBy, setSortBy, setSearch }) {
   return (
     <div className="toolbar">
+      <Link href={`/add-student`}>
+        <button className="toolbar-element add-new">הוספת תלמיד חדש</button>
+      </Link>
       <select
         className="toolbar-element select"
         value={sortBy}

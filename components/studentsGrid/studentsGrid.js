@@ -60,7 +60,7 @@ export default function StudentsGrid({ students, classInfo }) {
 
   return (
     <div className="grid-container">
-      <h1>תלמידים בכיתה {classInfo.className}</h1>
+      <h1>תלמידים בכיתה {classInfo.className}'</h1>
       <Sort_search
         sortBy={sortBy}
         setSortBy={setSortBy}

@@ -19,7 +19,7 @@ const StudentHeader = ({ student, classInfo }) => {
           {student.firstName} {student.lastName}
         </h1>
         <h2>ת.ז: {student.idil}</h2>
-        <h2>כיתה: {classInfo.className}</h2>
+        <h2>כיתה: {classInfo.className}'</h2>
       </div>
     </div>
   );
