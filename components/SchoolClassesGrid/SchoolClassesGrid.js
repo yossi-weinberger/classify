@@ -58,7 +58,7 @@ function GridItem({ item }) {
       <div className={styles.gridItem}>
         {item.img && <img src={item.img} alt={item.className} />}
         <div>
-          <h2>כיתה {item.className}</h2>
+          <h2>&apos;כיתה {item.className}</h2>
           <p>מורה: {item.teacher}</p>
           <div className={styles.readMore}>
             <button>פרטים</button>
