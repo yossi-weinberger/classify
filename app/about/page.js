@@ -7,7 +7,7 @@ export default function About() {
   return (
     <div className="main-about">
       <div className="about-container">
-        <h1 className="about-title">,נעים להכיר</h1>
+        <h1 className="about-title">נעים להכיר</h1>
         <p className="description">
           אנחנו סטודנטים לפיתוח תוכנה ממחזור 2 של Mego
           <br /> לאחר ראיונות עם מחנכים מעולמות החינוך המיוחד הבנו את הצורך
