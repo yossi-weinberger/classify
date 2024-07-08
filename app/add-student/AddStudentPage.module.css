@@ -2,7 +2,7 @@
   width: 100vw;
   min-height: 100vh;
   position: relative;
-  background: linear-gradient(180deg, #e8f5d6 0%, #c3d4d9 100%);
+  /* background: linear-gradient(180deg, #e8f5d6 0%, #c3d4d9 100%); */
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
