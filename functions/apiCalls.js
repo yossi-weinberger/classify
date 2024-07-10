@@ -1,7 +1,7 @@
 import axios from "axios";
 import dotenv from "dotenv";
-const SERVER_URL = "https://classify-backend.vercel.app";
-// const SERVER_URL = "http://localhost:3001";
+// const SERVER_URL = "https://classify-backend.vercel.app";
+const SERVER_URL = "http://localhost:3001";
 
 dotenv.config();
 // require("dotenv").config();
@@ -193,6 +193,95 @@ export async function addStudent(studentData) {
     throw error;
   }
 }
+
+export async function uploadImage(file) {
+  if (!file) return null;
+
+  const formData = new FormData();
+  formData.append("image", file);
+
+  try {
+    const url = `${SERVER_URL}/cloudinary/upload`;
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        Authorization: process.env.NEXT_PUBLIC_BEARER_TOKEN,
+      },
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error("Image upload failed");
+    }
+
+    const data = await response.json();
+    return data.url;
+  } catch (error) {
+    console.error("Error uploading image:", error);
+    throw error;
+  }
+}
+
+// export async function addStudent(studentData) {
+//   console.log("addStudent called with:", studentData);
+
+//   if (!studentData.idil) {
+//     console.error("idil is undefined or null");
+//     throw new Error("Student ID (idil) is required");
+//   }
+
+//   // טיפול בהערות האישיות
+//   let personalNotes = [];
+//   if (studentData.personalNotes) {
+//     const today = new Date();
+//     const formattedDate = `${today.getFullYear()}-${(today.getMonth() + 1)
+//       .toString()
+//       .padStart(2, "0")}-${today.getDate().toString().padStart(2, "0")}`;
+
+//     personalNotes = [
+//       {
+//         date: formattedDate,
+//         note: studentData.personalNotes,
+//       },
+//     ];
+//   }
+
+//   // יצירת אובייקט חדש של נתוני התלמיד עם הערות מעודכנות
+//   const updatedStudentData = {
+//     ...studentData,
+//     personalNotes: personalNotes,
+//   };
+
+//   try {
+//     const url = `${SERVER_URL}/students/`;
+//     console.log("Sending request to:", url);
+//     console.log("Updated student data:", updatedStudentData);
+
+//     const response = await fetch(url, {
+//       method: "POST",
+//       headers: {
+//         Authorization: process.env.NEXT_PUBLIC_BEARER_TOKEN,
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(updatedStudentData),
+//     });
+
+//     console.log("Response status:", response.status);
+
+//     if (!response.ok) {
+//       const errorText = await response.text();
+//       console.error("Server response:", errorText);
+//       throw new Error(`Server error: ${response.status}. ${errorText}`);
+//     }
+
+//     const data = await response.json();
+//     console.log("Response data:", data);
+//     return data;
+//   } catch (error) {
+//     console.error("Error adding new student:", error);
+//     throw error;
+//   }
+// }
 
 export async function deleteStudent(idil) {
   try {
