@@ -31,6 +31,31 @@ export async function getAllSchoolClasses() {
   }
 }
 
+// export async function getAllSchoolClasses() {
+//   try {
+//     const response = await fetch(`${SERVER_URL}/classes`, {
+//       // next: { : 10, tags: ["SchoolClasses"] },
+//       cache: "no-cache",
+//       headers: {
+//         Authorization: process.env.BEARER_TOKEN,
+//       },
+//     });
+//     if (!response.ok) {
+//       throw new Error(`Server error: ${response.status}`);
+//     }
+//     const data = await response.json();
+//     // console.log(
+//     //   "Response data from getAllSchoolClasses:",
+//     //   JSON.stringify(data, null, 2)
+//     // );
+//     // console.log(data);
+//     return data;
+//   } catch (error) {
+//     console.error("Failed to fetch or parse JSON:", error.message);
+//     throw new Error(error.message);
+//   }
+// }
+
 export async function getStudentsByClassId(classId) {
   try {
     const url = `${SERVER_URL}/classes/${classId}`;
