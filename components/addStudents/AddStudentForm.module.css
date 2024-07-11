@@ -53,16 +53,16 @@
 }
 
 .personalNotesField textarea {
-  height: 111px;
+  height: 70px;
   resize: vertical;
 }
-
 .fileInputWrapper {
   position: relative;
   overflow: hidden;
   display: inline-block;
   cursor: pointer;
   transition: all 0.3s ease;
+  max-width: 300px; /* הגדר רוחב מקסימלי בהתאם לצורך */
 }
 
 .fileInputWrapper:hover {
