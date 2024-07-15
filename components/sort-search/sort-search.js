@@ -10,9 +10,16 @@ export function Sort_search({ sortBy, setSortBy, setSearch, pageType }) {
         </Link>
       )}
       {pageType === "specificClass" && (
-        <Link href={`/add-student`}>
-          <button className="toolbar-element add-new">הוספת תלמיד חדש</button>
-        </Link>
+        <>
+          <Link href={`/add-student`}>
+            <button className="toolbar-element add-new">הוספת תלמיד חדש</button>
+          </Link>
+          <Link href={`/teacher-form`}>
+            <button className="toolbar-element add-new">
+              דיווח התקדמות תלמיד
+            </button>
+          </Link>
+        </>
       )}
       <select
         className="toolbar-element select"
