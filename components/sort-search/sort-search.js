@@ -1,19 +1,26 @@
 import "./sort-search.css";
 import Link from "next/link";
 
-export function Sort_search({ sortBy, setSortBy, setSearch }) {
+export function Sort_search({ sortBy, setSortBy, setSearch, pageType }) {
   return (
     <div className="toolbar">
-      <Link href={`/add-student`}>
-        <button className="toolbar-element add-new">הוספת תלמיד חדש</button>
-      </Link>
+      {pageType === "allClasses" && (
+        <Link href={`/add-class`}>
+          <button className="toolbar-element add-new">הוספת כיתה חדשה</button>
+        </Link>
+      )}
+      {pageType === "specificClass" && (
+        <Link href={`/add-student`}>
+          <button className="toolbar-element add-new">הוספת תלמיד חדש</button>
+        </Link>
+      )}
       <select
         className="toolbar-element select"
         value={sortBy}
         onChange={(e) => setSortBy(parseInt(e.target.value))}
       >
-        <option value={0}>א-ת</option>
-        <option value={1}>ת-א</option>
+        <option value={0}>מיון א-ת</option>
+        <option value={1}>מיון ת-א</option>
       </select>
       <input
         className="toolbar-element input"
@@ -22,40 +29,4 @@ export function Sort_search({ sortBy, setSortBy, setSearch }) {
       />
     </div>
   );
-}
-
-// import "./sort-search.css";
-// export function Sort_search({ sortBy, setSortBy, setSearch }) {
-//   return (
-//     <div className="toolbar">
-//       <select
-//         className="toolbar-element select"
-//         student={sortBy}
-//         onChange={(e) => setSortBy(parseInt(e.target.student))}
-//       >
-//         <option student={0}>א-ת</option>
-//         <option student={1}>ת-א</option>
-//         {/* <option student={2}>price from cheap</option> */}
-//         {/* <option student={3}>price from high</option> */}
-//       </select>
-//       <input
-//         className="toolbar-element input"
-//         placeholder="חיפוש..."
-//         onChange={(e) => setSearch(e.target.student)}
-//       />
-//     </div>
-//   );
-// }
-
-{
-  /* <select
-        className="toolbar-element select"
-        student={sortBy}
-        onChange={(e) => setSortBy(parseInt(e.target.student))}
-      >
-        <option student={0}>abc</option>
-        <option student={1}>cba</option>
-        <option student={2}>price from cheap</option>
-        <option student={3}>price from high</option>
-      </select> */
 }

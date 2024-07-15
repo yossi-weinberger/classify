@@ -97,3 +97,97 @@
 .student-id {
   text-align: center;
 }
+
+/* Media query for tablets and larger mobile phones */
+@media screen and (max-width: 1024px) {
+  .grid-container {
+    width: 95%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .grid-item {
+    width: 60%; /* Reduce width by 40% */
+    height: 600px; /* Doubled height */
+    padding: 12px;
+    margin: 0 auto; /* Center the item */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grid-item:hover {
+    height: 330px;
+  }
+
+  .grid-item img {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+
+  .grid-item h2 {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+
+  .grid-item p {
+    font-size: 13px;
+    margin: 8px 0;
+  }
+
+  .grid-item button {
+    height: 32px;
+    font-size: 13px;
+    padding: 3px;
+    margin: 3px;
+  }
+}
+
+/* Media query for smaller mobile phones */
+@media screen and (max-width: 600px) {
+  .grid-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .grid-item img {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .grid-item {
+    height: 330px;
+    padding: 10px;
+  }
+
+  .grid-item:hover {
+    height: 560px;
+  }
+
+  .grid-item h2 {
+    font-size: 15px;
+    margin: 6px 0;
+  }
+
+  .grid-item p {
+    font-size: 12px;
+    margin: 6px 0;
+  }
+
+  .grid-item button {
+    height: 30px;
+    font-size: 12px;
+    padding: 2px;
+    margin: 2px;
+  }
+}
