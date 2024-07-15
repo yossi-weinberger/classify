@@ -166,10 +166,6 @@
     flex-direction: column;
   }
 
-  .gridItem:hover {
-    height: 330px;
-  }
-
   .imageContainer {
     height: 200px;
     width: auto;
@@ -223,10 +219,6 @@
   .gridItem {
     height: 330px;
     padding: 10px;
-  }
-
-  .gridItem:hover {
-    height: 560px;
   }
 
   .imageContainer {

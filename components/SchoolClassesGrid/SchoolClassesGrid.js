@@ -55,8 +55,8 @@ export default function SchoolClassesGrid({ SchoolClasses }) {
 
 function GridItem({ item }) {
   return item && item._id ? (
-    <Link className="classLink" href={`/classes/${item._id}`}>
-      <div className={styles.gridItem}>
+    <div className={styles.gridItem}>
+      <Link className="classLink" href={`/classes/${item._id}`}>
         <div className={styles.imageContainer}>
           {item.img && <img src={item.img} alt={item.className} />}
           <div className={styles.classLabel}>
@@ -70,8 +70,8 @@ function GridItem({ item }) {
             <button>פרטים</button>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   ) : null;
 }
 
