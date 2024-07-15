@@ -65,6 +65,7 @@ export default function StudentsGrid({ students, classInfo }) {
         sortBy={sortBy}
         setSortBy={setSortBy}
         setSearch={setSearch}
+        pageType="specificClass"
       />
       <div className="grid">
         {studentsToShow.length > 0 ? studentsToShow : <p>לא נמצאו תלמידים</p>}

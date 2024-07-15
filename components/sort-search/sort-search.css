@@ -2,7 +2,10 @@ div.toolbar {
   display: flex;
   direction: rtl;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding: 10px 0;
+  width: 100%;
 }
 
 .toolbar-element {
@@ -10,35 +13,43 @@ div.toolbar {
   border-radius: 10px;
   border: #0f3849 solid 2px;
   padding: 10px;
-  margin: 10px;
+  margin-left: 10px;
   font-size: 15px;
   cursor: pointer;
   background-color: white;
   transition: 500ms ease;
-
-  /* הוספת צל לכפתורים */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-/* אפקט הרמה בעת מעבר עכבר */
+.toolbar-element:first-child {
+  margin-right: 0;
+}
+
 .toolbar-element:hover {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
 
-/* אפקט לחיצה */
 .toolbar-element:active {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transform: translateY(1px);
 }
 
-input.toolbar-element.input:focus {
-  flex-grow: 1;
-  transition: 500ms ease;
+input.toolbar-element.input {
+  width: 200px;
+  transition: all 500ms ease;
+  flex-shrink: 1;
 }
 
-select {
-  width: 21%;
+input.toolbar-element.input:focus {
+  flex-grow: 1;
+  width: auto;
+}
+
+select.toolbar-element {
+  padding-right: 25px;
 }
 
 button.toolbar-element.add-new:hover {
@@ -47,39 +58,16 @@ button.toolbar-element.add-new:hover {
   transition: 200ms ease;
 }
 
-/* div.toolbar {
-  display: flex;
-  direction: rtl;
-  align-items: center;
-  justify-content: right;
+@media (max-width: 768px) {
+  div.toolbar {
+    justify-content: flex-start;
+  }
+
+  input.toolbar-element.input {
+    width: 150px;
+  }
+
+  input.toolbar-element.input:focus {
+    width: auto;
+  }
 }
-
-.toolbar-element {
-  font-family: "Heebo", sans-serif;
-  border-radius: 10px;
-  border: #0f3849 solid 2px;
-  padding: 10px;
-  margin: 10px;
-  font-size: 15px;
-  cursor: pointer;
-  background-color: white;
-  transition: 500ms ease;
-}
-
-input.toolbar-element.input:focus {
-  flex-grow: 1;
-
-  transition: 500ms ease;
-}
-
-select {
-  width: 21%;
-}
-
-
-button.toolbar-element.add-new:hover {
-  background-color: #0f3849;
-  color: aliceblue;
-  transition: 200ms ease;
-}
- */

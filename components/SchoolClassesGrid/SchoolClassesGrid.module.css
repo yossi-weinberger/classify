@@ -1,5 +1,7 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap"); */
+/* Import Heebo font if not already imported in your project */
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap");
 
+/* Grid container styles */
 .gridContainer {
   display: flex;
   flex-direction: column;
@@ -10,49 +12,91 @@
   justify-content: center;
 }
 
+/* Grid layout */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
+/* Individual grid item styles */
 .gridItem {
   text-decoration: none;
   color: black;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: auto;
   padding: 25px;
   border: 1.5px solid #0f3849;
   border-radius: 25px;
   cursor: pointer;
   transition: all 200ms ease;
   background-color: aliceblue;
-  /* width: 100%; */
+  overflow: hidden;
 }
 
+/* Hover effect for grid items */
 .gridItem:hover {
   border: 2px solid #0f3849;
-  height: 410px;
-  /* width: 105%; */
+  transform: scale(1.05);
   transition: all 200ms ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.gridItem img {
-  margin: 0 0 15px 0;
-  padding: 0 0 15px 0;
-  height: 100%;
+/* Image container styles */
+.imageContainer {
+  position: relative;
   width: 100%;
-  object-fit: contain;
+  height: 200px;
+  overflow: hidden;
+}
+
+/* Image styles */
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: 200ms ease;
 }
 
-.gridItem img:hover {
+/* Image hover effect */
+.imageContainer img:hover {
   transition: 200ms ease;
   transform: rotate(2deg);
 }
 
+/* Class label styles */
+.classLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  text-align: center;
+}
+
+/* Class name style */
+.className {
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Class number style */
+.classNumber {
+  display: block;
+  font-size: 35px;
+  font-weight: bold;
+  color: #0f3849;
+}
+
+/* Item details container */
+.itemDetails {
+  padding: 10px;
+}
+
+/* Heading style */
 .gridItem h2 {
   font-size: 20px;
   display: flex;
@@ -60,12 +104,14 @@
   justify-content: center;
 }
 
+/* Paragraph style */
 .gridItem p {
   font-size: 15px;
   direction: rtl;
   text-align: center;
 }
 
+/* Read more section styles */
 .readMore {
   display: flex;
   flex-direction: row;
@@ -74,35 +120,149 @@
   width: 100%;
 }
 
+/* Button styles */
 .gridItem button {
-  /* width: 100%;
+  width: 100%;
   height: 40px;
   border-radius: 10px;
   border: 3px solid #0f3849;
   padding: 5px;
   margin: 5px;
   font-size: 15px;
-  cursor: pointer; */
-
-  width: 100%;
-  height: 40px;
-  border-radius: 10px;
-  border: 3px solid rgb #0f3849;
-  padding: 5px;
-  margin: 5px;
-  font-size: 15px;
   cursor: pointer;
-  font-family: heebo, san sarif;
+  font-family: "Heebo", sans-serif;
 }
 
+/* Button hover effect */
 .gridItem button:hover {
   background-color: #0f3849;
   color: aliceblue;
   transition: 200ms ease;
 }
 
+/* Loading state style */
 .loading {
   text-align: center;
   font-size: 18px;
   padding: 20px;
+}
+/* Media query for tablets and larger mobile phones */
+@media screen and (max-width: 1024px) {
+  .gridContainer {
+    width: 95%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .gridItem {
+    width: 60%; /* Reduce width by 40% */
+    height: 600px; /* Doubled height */
+    padding: 12px;
+    margin: 0 auto; /* Center the item */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gridItem:hover {
+    height: 330px;
+  }
+
+  .imageContainer {
+    height: 200px;
+    width: auto;
+    margin-bottom: 10px;
+  }
+
+  .imageContainer img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .className {
+    font-size: 20px;
+  }
+
+  .classNumber {
+    font-size: 28px;
+  }
+
+  .gridItem h2 {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+
+  .gridItem p {
+    font-size: 13px;
+    margin: 8px 0;
+  }
+
+  .gridItem button {
+    height: 32px;
+    font-size: 13px;
+    padding: 3px;
+    margin: 3px;
+  }
+}
+
+/* Media query for smaller mobile phones */
+@media screen and (max-width: 600px) {
+  .gridContainer {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .gridItem {
+    height: 330px;
+    padding: 10px;
+  }
+
+  .gridItem:hover {
+    height: 560px;
+  }
+
+  .imageContainer {
+    height: 200px;
+    width: auto;
+    margin-bottom: 10px;
+  }
+
+  .imageContainer img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .className {
+    font-size: 18px;
+  }
+
+  .classNumber {
+    font-size: 24px;
+  }
+
+  .gridItem h2 {
+    font-size: 15px;
+    margin: 6px 0;
+  }
+
+  .gridItem p {
+    font-size: 12px;
+    margin: 6px 0;
+  }
+
+  .gridItem button {
+    height: 30px;
+    font-size: 12px;
+    padding: 2px;
+    margin: 2px;
+  }
 }

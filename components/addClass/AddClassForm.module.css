@@ -1,0 +1,116 @@
+/* AddStudentForm.module.css */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  direction: rtl;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* .inputGroup,
+.idField,
+.personalNotesField {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+} */
+
+/* .inputGroup label,
+.idField label,
+.personalNotesField label {
+  color: #333333;
+  font-size: 16px;
+  font-family: "Heebo", sans-serif;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+} */
+
+.inputGroup input,
+.fileInputWrapper {
+  width: 100%;
+  height: 40px; /* קביעת גובה אחיד לכל השדות */
+  border-radius: 27px;
+  border: 1px solid #246173;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-family: "Heebo", sans-serif;
+  background-color: white; /* וידוא שהרקע של כל השדות הוא לבן */
+}
+
+/* .fileInputWrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fileInputWrapper:hover {
+  background-color: #f0f8ff;
+  border-color: #1e5160;
+}
+
+.fileInput {
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.fileInputText {
+  display: inline-block;
+  width: calc(100% - 30px); 
+  height: 100%;
+  line-height: 24px;
+  font-size: 14px;
+  font-family: "Heebo", sans-serif;
+  color: #333333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.uploadIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+} */
+
+.submitButton {
+  width: 100%;
+  height: 44px;
+  background: linear-gradient(#246173, #0a2620) padding-box;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 35px;
+  color: white;
+  font-size: 22px;
+  font-family: "Heebo", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submitButton:hover {
+  background: linear-gradient(#1e5160, #051310) padding-box;
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
