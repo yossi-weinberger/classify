@@ -24,8 +24,6 @@ const handler = NextAuth({
       const isAllowedUser = allowedUsers.includes(user.email);
       if (isAllowedUser) {
         return true;
-      } else {
-        return false;
       }
     },
   },
