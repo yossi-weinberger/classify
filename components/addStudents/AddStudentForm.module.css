@@ -62,10 +62,11 @@
   display: inline-block;
   cursor: pointer;
   transition: all 0.3s ease;
+  max-width: 250px; /* הגדר רוחב מקסימלי בהתאם לצורך */
 }
 
 .fileInputWrapper:hover {
-  background-color: #f0f8ff; /* תכלת בהיר מאוד */
+  background-color: #f0f8ff;
   border-color: #1e5160;
 }
 
@@ -82,7 +83,7 @@
 
 .fileInputText {
   display: inline-block;
-  width: calc(100% - 30px); /* מקום לאייקון */
+  width: calc(100% - 30px);
   height: 100%;
   line-height: 24px;
   font-size: 14px;
