@@ -74,20 +74,3 @@ function GridItem({ item }) {
     </div>
   ) : null;
 }
-
-// function GridItem({ item }) {
-//   return item && item._id ? (
-//     <Link href={`/classes/${item._id}`}>
-//       <div className={styles.gridItem}>
-//         {item.img && <img src={item.img} alt={item.className} />}
-//         <div>
-//           <h2>&apos;כיתה {item.className}</h2>
-//           <p>מורה: {item.teacher}</p>
-//           <div className={styles.readMore}>
-//             <button>פרטים</button>
-//           </div>
-//         </div>
-//       </div>
-//     </Link>
-//   ) : null;
-// }

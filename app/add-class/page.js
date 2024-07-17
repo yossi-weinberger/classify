@@ -1,4 +1,3 @@
-// app/add-Class/page.js
 import AddClassForm from "@/components/addClass/AddClassForm";
 import styles from "./AddClassPage.module.css";
 import Image from "next/image";
@@ -35,15 +34,6 @@ export default function AddClassPage() {
               className={styles.icon}
             />
           </div>
-          {/* <div className={styles.bottomLeftIcon}>
-            <Image
-              src="/icons/about.svg"
-              alt="Book icon"
-              width={120}
-              height={120}
-              className={styles.icon}
-            />
-          </div> */}
         </div>
         <div className={styles.rightContent}>
           <div className={styles.title}>הוספת כיתה חדש</div>

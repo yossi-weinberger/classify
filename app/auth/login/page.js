@@ -13,10 +13,6 @@ export default function Login() {
     </button>
   );
 
-  // if (error) {
-  //   console.error("Session error:", error);
-  //   return <div>An error occurred: {error.message}</div>;
-  // }
   if (session) {
     return (
       <div className={styles.container}>
