@@ -12,25 +12,6 @@
   gap: 20px;
 }
 
-/* .inputGroup,
-.idField,
-.personalNotesField {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-} */
-
-/* .inputGroup label,
-.idField label,
-.personalNotesField label {
-  color: #333333;
-  font-size: 16px;
-  font-family: "Heebo", sans-serif;
-  line-height: 24px;
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
-} */
-
 .inputGroup input,
 .fileInputWrapper {
   width: 100%;
@@ -42,50 +23,6 @@
   font-family: "Heebo", sans-serif;
   background-color: white; /* וידוא שהרקע של כל השדות הוא לבן */
 }
-
-/* .fileInputWrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.fileInputWrapper:hover {
-  background-color: #f0f8ff;
-  border-color: #1e5160;
-}
-
-.fileInput {
-  position: absolute;
-  font-size: 100px;
-  right: 0;
-  top: 0;
-  opacity: 0;
-  cursor: pointer;
-  height: 100%;
-  width: 100%;
-}
-
-.fileInputText {
-  display: inline-block;
-  width: calc(100% - 30px); 
-  height: 100%;
-  line-height: 24px;
-  font-size: 14px;
-  font-family: "Heebo", sans-serif;
-  color: #333333;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.uploadIcon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-} */
 
 .submitButton {
   width: 100%;

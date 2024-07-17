@@ -19,11 +19,6 @@ export async function getAllSchoolClasses() {
       throw new Error(`Server error: ${response.status}`);
     }
     const data = await response.json();
-    // console.log(
-    //   "Response data from getAllSchoolClasses:",
-    //   JSON.stringify(data, null, 2)
-    // );
-    // console.log(data);
     return data;
   } catch (error) {
     console.error("Failed to fetch or parse JSON:", error.message);

@@ -1,4 +1,3 @@
-// app/add-student/page.js
 import AddStudentForm from "@/components/addStudents/AddStudentForm";
 import styles from "./AddStudentPage.module.css";
 import Image from "next/image";
