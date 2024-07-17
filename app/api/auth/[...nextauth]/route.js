@@ -21,11 +21,11 @@ const handler = NextAuth({
   ...options,
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
-      const isAllowedUser = allowedUsers.includes(user.email);
+      const isAllowedUser = allowedUsers.some(
+        (allowedUser) => allowedUser.email === user.email
+      );
       if (isAllowedUser) {
         return true;
-      } else {
-        return false;
       }
     },
   },
