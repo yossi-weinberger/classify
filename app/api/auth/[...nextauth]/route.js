@@ -20,12 +20,12 @@ const options = {
 const handler = NextAuth({
   ...options,
   callbacks: {
-    async signIn({ user, account, profile, email, credentials }) {
-      const isAllowedUser = allowedUsers.some(
-        (allowedUser) => allowedUser.email === user.email
-      );
-      return isAllowedUser;
-    },
+    // async signIn({ user, account, profile, email, credentials }) {
+    //   const isAllowedUser = allowedUsers.some(
+    //     (allowedUser) => allowedUser.email === user.email
+    //   );
+    //   return isAllowedUser;
+    // },
   },
   pages: {
     signIn: "/auth/login",
