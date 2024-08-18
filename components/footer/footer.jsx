@@ -50,7 +50,11 @@ export default function Footer() {
           <a href="" title="YouTube" className="social-icon youtube">
             <YoutubeIcon />
           </a>
-          <a href="" title="LinkedIn" className="social-icon linkedin">
+          <a
+            href="https://www.linkedin.com/in/yossi-weinberger-364ab615a/"
+            title="LinkedIn"
+            className="social-icon linkedin"
+          >
             <LinkedinIcon />
           </a>
         </div>

@@ -18,6 +18,10 @@ export default function Login() {
       <div className={styles.container}>
         <div className={styles.buttonContainer}>
           <p className={styles.title}>Welcome,{session.user.name}</p>
+          <p className={styles.title}>
+            לצורכי הדגמה, האתר פתוח לכולם <br></br>יש לבצע אימות רק מול חשבון
+            גוגל
+          </p>
           {/* <button onClick={() => signOut()} className={styles.button}>
               Sign out
             </button> */}
@@ -30,7 +34,9 @@ export default function Login() {
   return (
     <div className={styles.container}>
       <div className={styles.buttonContainer}>
-        <p className={styles.title}></p>
+        <p className={styles.title}>
+          לצורכי הדגמה, האתר פתוח לכולם <br></br>יש לבצע אימות רק מול חשבון גוגל
+        </p>
         {renderButton("Sign in with Google", () => signIn("google"))}
       </div>
     </div>
