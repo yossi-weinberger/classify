@@ -7,12 +7,13 @@ dotenv.config();
 // require("dotenv").config();
 
 export async function getAllSchoolClasses() {
+  console.log("getAllSchoolClasses called");
   try {
     const response = await fetch(`${SERVER_URL}/classes`, {
       // next: { : 10, tags: ["SchoolClasses"] },
       cache: "no-cache",
       headers: {
-        Authorization: process.env.BEARER_TOKEN,
+        Authorization: process.env.NEXT_PUBLIC_BEARER_TOKEN,
       },
     });
     if (!response.ok) {
@@ -34,7 +35,7 @@ export async function getStudentsByClassId(classId) {
     const response = await fetch(url, {
       cache: "no-cache",
       headers: {
-        Authorization: process.env.BEARER_TOKEN,
+        Authorization: process.env.NEXT_PUBLIC_BEARER_TOKEN,
       },
     });
 
@@ -298,4 +299,12 @@ export async function addClass(classData) {
     console.error("Error adding new Class:", error);
     throw error;
   }
+}
+
+export async function addEvaluation(evaluationData) {
+  // זו פונקציית דמה. בעתיד, כאן תהיה הלוגיקה לשליחת הנתונים לשרת.
+  console.log("Sending evaluation data:", evaluationData);
+  return new Promise((resolve) =>
+    setTimeout(() => resolve({ success: true }), 1000)
+  );
 }
