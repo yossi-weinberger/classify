@@ -6,6 +6,20 @@ const SERVER_URL = "https://classify-backend.vercel.app";
 dotenv.config();
 // require("dotenv").config();
 
+// Function to handle errors
+async function handleError(response) {
+  let errorMessage = `Server error: ${response.status}`;
+  try {
+    const errorData = await response.json();
+    errorMessage += ` - ${errorData.message || JSON.stringify(errorData)}`;
+  } catch {
+    const textContent = await response.text();
+    errorMessage += ` - ${textContent}`;
+  }
+  throw new Error(errorMessage);
+}
+
+// Fetches all school classes
 export async function getAllSchoolClasses() {
   console.log("getAllSchoolClasses called");
   try {
@@ -17,7 +31,7 @@ export async function getAllSchoolClasses() {
       },
     });
     if (!response.ok) {
-      throw new Error(`Server error: ${response.status}`);
+      await handleError(response);
     }
     const data = await response.json();
     return data;
@@ -27,6 +41,7 @@ export async function getAllSchoolClasses() {
   }
 }
 
+// Fetches students by class ID
 export async function getStudentsByClassId(classId) {
   try {
     const url = `${SERVER_URL}/classes/${classId}`;
@@ -42,11 +57,7 @@ export async function getStudentsByClassId(classId) {
     console.log("Response status:", response.status);
 
     if (!response.ok) {
-      const errorBody = await response.text();
-      console.error("Error response body:", errorBody);
-      throw new Error(
-        `HTTP error! status: ${response.status}, body: ${errorBody}`
-      );
+      await handleError(response);
     }
 
     const data = await response.json();
@@ -58,6 +69,7 @@ export async function getStudentsByClassId(classId) {
   }
 }
 
+// Fetches a specific student by class ID and student ID
 export async function getStudentByClassAndStudentId(classId, studentId) {
   try {
     const url = `${SERVER_URL}/classes/${encodeURIComponent(
@@ -75,9 +87,7 @@ export async function getStudentByClassAndStudentId(classId, studentId) {
     // console.log("Bearer Token:", process.env.BEARER_TOKEN);
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error("Server response:", errorText);
-      throw new Error(`Server error: ${response.status}. ${errorText}`);
+      await handleError(response);
     }
 
     const data = await response.json();
@@ -88,6 +98,8 @@ export async function getStudentByClassAndStudentId(classId, studentId) {
     throw error;
   }
 }
+
+// Adds a personal note to a student
 export async function addPersonalNoteToStudent(idil, note) {
   console.log("addPersonalNoteToStudent called with:", { idil, note });
 
@@ -115,9 +127,7 @@ export async function addPersonalNoteToStudent(idil, note) {
     console.log("Response status:", response.status);
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error("Server response:", errorText);
-      throw new Error(`Server error: ${response.status}. ${errorText}`);
+      await handleError(response);
     }
 
     const data = await response.json();
@@ -129,6 +139,7 @@ export async function addPersonalNoteToStudent(idil, note) {
   }
 }
 
+// Adds a new student
 export async function addStudent(studentData) {
   console.log("addStudent called with:", studentData);
 
@@ -176,9 +187,7 @@ export async function addStudent(studentData) {
     console.log("Response status:", response.status);
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error("Server response:", errorText);
-      throw new Error(`Server error: ${response.status}. ${errorText}`);
+      await handleError(response);
     }
 
     const data = await response.json();
@@ -190,6 +199,7 @@ export async function addStudent(studentData) {
   }
 }
 
+// Uploads an image
 export async function uploadImage(file) {
   if (!file) return null;
 
@@ -218,6 +228,7 @@ export async function uploadImage(file) {
   }
 }
 
+// Deletes a student
 export async function deleteStudent(idil) {
   try {
     const response = await fetch(`${SERVER_URL}/students/${idil}`, {
@@ -229,20 +240,8 @@ export async function deleteStudent(idil) {
       },
     });
 
-    let errorMessage = `Failed to delete student. Status: ${response.status}`;
-
     if (!response.ok) {
-      try {
-        // Try to parse error message from response
-        const errorData = await response.json();
-        errorMessage += ` - ${errorData.message || JSON.stringify(errorData)}`;
-      } catch (jsonError) {
-        // If parsing JSON fails, use text content
-        const textContent = await response.text();
-        errorMessage += ` - ${textContent}`;
-      }
-
-      throw new Error(errorMessage);
+      await handleError(response);
     }
 
     const data = await response.json();
@@ -257,6 +256,7 @@ export async function deleteStudent(idil) {
   }
 }
 
+// Adds a new class
 export async function addClass(classData) {
   console.log("addClass called with:", classData);
 
@@ -287,9 +287,7 @@ export async function addClass(classData) {
     console.log("Response status:", response.status);
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error("Server response:", errorText);
-      throw new Error(`Server error: ${response.status}. ${errorText}`);
+      await handleError(response);
     }
 
     const data = await response.json();
@@ -301,6 +299,7 @@ export async function addClass(classData) {
   }
 }
 
+// Adds an evaluation (dummy function for future implementation)
 export async function addEvaluation(evaluationData) {
   // זו פונקציית דמה. בעתיד, כאן תהיה הלוגיקה לשליחת הנתונים לשרת.
   console.log("Sending evaluation data:", evaluationData);

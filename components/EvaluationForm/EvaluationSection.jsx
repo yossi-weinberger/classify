@@ -1,4 +1,4 @@
-import RadioSelector from "@/components/radioSelector/radioSelector";
+import RadioSelector from "@/components/radioSelector/RadioSelector";
 import styles from "./EvaluationForm.module.css";
 
 export default function EvaluationSection({ formData, handleChange }) {
@@ -9,6 +9,7 @@ export default function EvaluationSection({ formData, handleChange }) {
         <RadioSelector
           value={formData[name] || "1"}
           onChange={(value) => handleChange({ target: { name, value } })}
+          name={name}
         />
       </div>
     </div>
@@ -52,6 +53,31 @@ export default function EvaluationSection({ formData, handleChange }) {
           value={formData.additional_comments}
           onChange={handleChange}
         />
+      </div>
+      
+      {/* שדות חדשים עבור שם ממלא ההערכה ותפקידו, אחד ליד השני */}
+      <div className={styles.evaluatorInfo}>
+        <div className={styles.inputGroup}>
+          <label htmlFor="evaluator_name">שם ממלא ההערכה</label>
+          <input
+            type="text"
+            id="evaluator_name"
+            name="evaluator_name"
+            value={formData.evaluator_name}
+            onChange={handleChange}
+          />
+        </div>
+        
+        <div className={styles.inputGroup}>
+          <label htmlFor="evaluator_role">תפקיד ממלא ההערכה</label>
+          <input
+            type="text"
+            id="evaluator_role"
+            name="evaluator_role"
+            value={formData.evaluator_role}
+            onChange={handleChange}
+          />
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { useStudents } from "./useStudents";
 import { useEvaluationForm } from "./useEvaluationForm";
 import StudentSelector from "./StudentSelector";
@@ -7,11 +7,12 @@ import PersonalInfoSection from "./PersonalInfoSection";
 import EducationInfoSection from "./EducationInfoSection";
 import EvaluationSection from "./EvaluationSection";
 import styles from "./EvaluationForm.module.css";
+import { useSortContext } from '@/providers/SortProvider';
 
 export default function EvaluationForm() {
-  console.log("Rendering EvaluationForm");
   const [selectedClassId, setSelectedClassId] = useState("");
   const { classes, students, loading, error } = useStudents(selectedClassId);
+  const { sortItems } = useSortContext();
   const {
     formData,
     handleChange,
@@ -21,11 +22,7 @@ export default function EvaluationForm() {
     setFormData,
   } = useEvaluationForm();
 
-  console.log("Classes:", classes);
-  console.log("Loading:", loading);
-  console.log("Error:", error);
-
-  const handleStudentSelect = (student) => {
+  const handleStudentSelect = useCallback((student) => {
     if (student) {
       setFormData({
         ...formData,
@@ -41,10 +38,19 @@ export default function EvaluationForm() {
         special_education_status: student.specialEducationStatus || false,
         main_disability: student.mainDisability || "",
         secondary_disability: student.secondaryDisability || "",
+        image_url: student.img || "",
         // ... כל שאר השדות הרלוונטיים
       });
     }
-  };
+  }, [formData, setFormData]);
+
+  const sortedClasses = useMemo(() => {
+    return sortItems(classes, 'className');
+  }, [classes, sortItems]);
+
+  const sortedStudents = useMemo(() => {
+    return sortItems(students, 'firstName');
+  }, [students, sortItems]);
 
   if (loading) return <div>טוען...</div>;
   if (error) return <div>שגיאה: {error}</div>;
@@ -55,8 +61,8 @@ export default function EvaluationForm() {
       {submitSuccess && <div className={styles.success}>{submitSuccess}</div>}
 
       <StudentSelector
-        classes={classes}
-        students={students}
+        classes={sortedClasses}
+        students={sortedStudents}
         selectedClassId={selectedClassId}
         setSelectedClassId={setSelectedClassId}
         onStudentSelect={handleStudentSelect}
