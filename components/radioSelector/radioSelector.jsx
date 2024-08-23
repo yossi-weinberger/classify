@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./RadioSelector.css";
+import "./radioSelector.css";
 
 function RadioSelector({ value, onChange, name }) {
   const [selectedValue, setSelectedValue] = useState(value || "1");
