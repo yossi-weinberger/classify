@@ -1,6 +1,6 @@
 // page.js
 import EvaluationForm from "@/components/EvaluationForm";
-import styles from "./EvaluationPage.module.css";
+import styles from "./evaluationPage.module.css";
 import Image from "next/image";
 
 export default function EvaluationPage() {
@@ -48,9 +48,9 @@ export default function EvaluationPage() {
         <div className={styles.rightContent}>
           <div className={styles.title}>טופס הערכת תלמיד</div>
           <div className={styles.formWrapper}>
-              <EvaluationForm />
-            </div>
+            <EvaluationForm />
           </div>
+        </div>
       </div>
     </div>
   );
