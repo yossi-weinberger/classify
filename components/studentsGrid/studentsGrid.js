@@ -2,18 +2,47 @@
 import { nanoid } from "nanoid";
 import Link from "next/link";
 import "./studentsGrid.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSortContext } from "@/providers/SortProvider";
 import { Sort_search } from "@/components/sort-search/sort-search";
 
-function sortStudents(a, b, sortBy) {
-  if (sortBy === 0) {
-    // מיון א-ת
-    return a.lastName.localeCompare(b.lastName, "he");
-  } else if (sortBy === 1) {
-    // מיון ת-א
-    return b.lastName.localeCompare(a.lastName, "he");
+export default function StudentsGrid({ students, classInfo }) {
+  const { sortItems } = useSortContext();
+  const [search, setSearch] = useState("");
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const studentsToShow =
+    isClient && Array.isArray(students)
+      ? sortItems(
+          students.filter(
+            (student) =>
+              (student?.firstName + " " + student?.lastName)
+                .toLowerCase()
+                .includes((search || "").toLowerCase())
+          ),
+          "firstName"
+        ).map((student) => (
+          <GridItem key={nanoid()} item={student} classInfo={classInfo} />
+        ))
+      : [];
+
+  if (!isClient) {
+    return <div className="loading">טוען...</div>;
   }
-  return 0;
+
+  return (
+    <div className="grid-container">
+      <h1>תלמידים בכיתה {classInfo.className}&apos;</h1>
+      <Sort_search setSearch={setSearch} pageType="specificClass" />
+      <div className="grid">
+        {studentsToShow.length > 0 ? studentsToShow : <p>לא נמצאו תלמידים</p>}
+      </div>
+    </div>
+  );
 }
 
 function GridItem({ item, classInfo }) {
@@ -38,38 +67,5 @@ function GridItem({ item, classInfo }) {
         </div>
       </div>
     </Link>
-  );
-}
-
-export default function StudentsGrid({ students, classInfo }) {
-  const [search, setSearch] = useState("");
-  const [sortBy, setSortBy] = useState(0);
-
-  const studentsToShow = Array.isArray(students)
-    ? students
-        .filter(
-          (student) =>
-            student?.firstName?.toLowerCase().includes(search.toLowerCase()) ||
-            student?.lastName?.toLowerCase().includes(search.toLowerCase())
-        )
-        .sort((a, b) => sortStudents(a, b, sortBy))
-        .map((student) => (
-          <GridItem key={nanoid()} item={student} classInfo={classInfo} />
-        ))
-    : [];
-
-  return (
-    <div className="grid-container">
-      <h1>תלמידים בכיתה {classInfo.className}&apos;</h1>
-      <Sort_search
-        sortBy={sortBy}
-        setSortBy={setSortBy}
-        setSearch={setSearch}
-        pageType="specificClass"
-      />
-      <div className="grid">
-        {studentsToShow.length > 0 ? studentsToShow : <p>לא נמצאו תלמידים</p>}
-      </div>
-    </div>
   );
 }

@@ -19,8 +19,8 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   gap: 30px;
+  direction: rtl; /* הוספנו זאת כדי להבטיח שהגריד עצמו מתחיל מימין לשמאל */
 }
 
 .grid-item {

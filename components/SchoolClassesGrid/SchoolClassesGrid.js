@@ -4,12 +4,12 @@ import { nanoid } from "nanoid";
 import Link from "next/link";
 import styles from "./SchoolClassesGrid.module.css";
 import { useState, useEffect } from "react";
-import { sortSchoolClasses } from "@/functions/global_functions";
-import { Sort_search } from "@/components/sort-search/sort-search";
+import { useSortContext } from '@/providers/SortProvider';
+import { Sort_search } from '@/components/sort-search/sort-search';
 
 export default function SchoolClassesGrid({ SchoolClasses }) {
+  const { sortItems } = useSortContext();
   const [search, setSearch] = useState("");
-  const [sortBy, setSortBy] = useState(0);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -18,15 +18,15 @@ export default function SchoolClassesGrid({ SchoolClasses }) {
 
   const SchoolClassesToShow =
     isClient && Array.isArray(SchoolClasses?.data)
-      ? SchoolClasses.data
-          .filter((classItem) =>
+      ? sortItems(
+          SchoolClasses.data.filter((classItem) =>
             classItem?.className
-              ?.trim()
+              ?.toString()
               .toLowerCase()
-              .includes((search || "").trim().toLowerCase())
-          )
-          .sort((a, b) => sortSchoolClasses(a, b, sortBy))
-          .map((classItem) => <GridItem key={nanoid()} item={classItem} />)
+              .includes((search || "").toLowerCase())
+          ),
+          "className"
+        ).map((classItem) => <GridItem key={nanoid()} item={classItem} />)
       : [];
 
   if (!isClient) {
@@ -35,13 +35,7 @@ export default function SchoolClassesGrid({ SchoolClasses }) {
 
   return (
     <div className={styles.gridContainer}>
-      <Sort_search
-        sortBy={sortBy}
-        setSortBy={setSortBy}
-        setSearch={setSearch}
-        pageType="allClasses"
-      />
-
+      <Sort_search setSearch={setSearch} pageType="allClasses" />
       <div className={styles.grid}>
         {SchoolClassesToShow.length > 0 ? (
           SchoolClassesToShow

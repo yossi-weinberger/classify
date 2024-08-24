@@ -1,7 +1,11 @@
+"use client";
 import "./sort-search.css";
 import Link from "next/link";
+import { useSortContext } from "@/providers/SortProvider";
 
-export function Sort_search({ sortBy, setSortBy, setSearch, pageType }) {
+export function Sort_search({ setSearch, pageType }) {
+  const { sortBy, setSortBy } = useSortContext();
+
   return (
     <div className="toolbar">
       {pageType === "allClasses" && (
@@ -14,7 +18,7 @@ export function Sort_search({ sortBy, setSortBy, setSearch, pageType }) {
           <Link href={`/add-student`}>
             <button className="toolbar-element add-new">הוספת תלמיד חדש</button>
           </Link>
-          <Link href={`/teacher-form`}>
+          <Link href={`/evaluationPage`}>
             <button className="toolbar-element add-new">
               דיווח התקדמות תלמיד
             </button>
