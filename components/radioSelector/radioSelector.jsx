@@ -1,4 +1,4 @@
-import "./radioSelector.css";
+import "./radio-selector.css";
 import React, { useState, useEffect } from "react";
 
 function RadioSelector({ value, onChange, name }) {
