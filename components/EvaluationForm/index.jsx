@@ -1,5 +1,5 @@
 "use client";
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
 import { useStudents } from "./useStudents";
 import { useEvaluationForm } from "./useEvaluationForm";
 import StudentSelector from "./StudentSelector";
@@ -7,7 +7,8 @@ import PersonalInfoSection from "./PersonalInfoSection";
 import EducationInfoSection from "./EducationInfoSection";
 import EvaluationSection from "./EvaluationSection";
 import styles from "./EvaluationForm.module.css";
-import { useSortContext } from '@/providers/SortProvider';
+import { useSortContext } from "@/providers/SortProvider";
+import Loading from "../loading/loading";
 
 export default function EvaluationForm() {
   const [selectedClassId, setSelectedClassId] = useState("");
@@ -22,44 +23,52 @@ export default function EvaluationForm() {
     setFormData,
   } = useEvaluationForm();
 
-  const handleStudentSelect = useCallback((student) => {
-    if (student) {
-      setFormData({
-        ...formData,
-        student_idil: student.idil,
-        first_name: student.firstName,
-        last_name: student.lastName,
-        gender: student.gender || "",
-        date_of_birth: student.dateOfBirth,
-        class: student.class,
-        school_name: student.school,
-        city: student.address?.city || "",
-        neighborhood: student.address?.neighborhood || "",
-        special_education_status: student.specialEducationStatus || false,
-        main_disability: student.mainDisability || "",
-        secondary_disability: student.secondaryDisability || "",
-        image_url: student.img || "",
-        // ... כל שאר השדות הרלוונטיים
-      });
-    }
-  }, [formData, setFormData]);
+  const handleStudentSelect = useCallback(
+    (student) => {
+      if (student) {
+        setFormData({
+          ...formData,
+          student_idil: student.idil,
+          first_name: student.firstName,
+          last_name: student.lastName,
+          gender: student.gender || "",
+          date_of_birth: student.dateOfBirth,
+          class: student.class,
+          school_name: student.school,
+          city: student.address?.city || "",
+          neighborhood: student.address?.neighborhood || "",
+          special_education_status: student.specialEducationStatus || false,
+          main_disability: student.mainDisability || "",
+          secondary_disability: student.secondaryDisability || "",
+          image_url: student.img || "",
+          // ... כל שאר השדות הרלוונטיים
+        });
+      } else {
+        setFormData({}); // איפוס הטופס אם לא נבחר תלמיד
+      }
+    },
+    [setFormData]
+  );
 
   const sortedClasses = useMemo(() => {
-    return sortItems(classes, 'className');
+    return sortItems(classes, "className");
   }, [classes, sortItems]);
 
   const sortedStudents = useMemo(() => {
-    return sortItems(students, 'firstName');
+    return sortItems(students, "firstName");
   }, [students, sortItems]);
 
-  if (loading) return <div>טוען...</div>;
+  useEffect(() => {
+    if (submitSuccess) {
+      setSelectedClassId("");
+    }
+  }, [submitSuccess]);
+
+  if (loading) return <Loading />;
   if (error) return <div>שגיאה: {error}</div>;
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      {submitError && <div className={styles.error}>{submitError}</div>}
-      {submitSuccess && <div className={styles.success}>{submitSuccess}</div>}
-
       <StudentSelector
         classes={sortedClasses}
         students={sortedStudents}
