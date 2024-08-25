@@ -1,7 +1,7 @@
 // import axios from "axios";
 import dotenv from "dotenv";
-const SERVER_URL = "https://classify-backend.vercel.app";
-// const SERVER_URL = "http://localhost:3001";
+// const SERVER_URL = "https://classify-backend.vercel.app";
+const SERVER_URL = "http://localhost:3001";
 
 dotenv.config();
 // require("dotenv").config();
@@ -299,11 +299,54 @@ export async function addClass(classData) {
   }
 }
 
-// Adds an evaluation (dummy function for future implementation)
+// // Adds an evaluation (dummy function for future implementation)
+// export async function addEvaluation(evaluationData) {
+//   // זו פונקציית דמה. בעתיד, כאן תהיה הלוגיקה לשליחת הנתונים לשרת.
+//   console.log("Sending evaluation data:", evaluationData);
+//   return new Promise((resolve) =>
+//     setTimeout(() => resolve({ success: true }), 1000)
+//   );
+// }
+
+// Adds a new student evaluation
 export async function addEvaluation(evaluationData) {
-  // זו פונקציית דמה. בעתיד, כאן תהיה הלוגיקה לשליחת הנתונים לשרת.
-  console.log("Sending evaluation data:", evaluationData);
-  return new Promise((resolve) =>
-    setTimeout(() => resolve({ success: true }), 1000)
-  );
+  console.log("addStudentEvaluation called with:", evaluationData);
+
+  if (!evaluationData.student_idil || !evaluationData.evaluation_date) {
+    console.error("Essential fields are undefined or null");
+    throw new Error("Essential fields are required");
+  }
+
+  // יצירת אובייקט חדש של נתוני ההערכה
+  const updatedEvaluationData = {
+    ...evaluationData,
+  };
+
+  try {
+    const url = `${SERVER_URL}/evaluations/`;
+    console.log("Sending request to:", url);
+    console.log("Updated Evaluation data:", updatedEvaluationData);
+
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        Authorization: process.env.NEXT_PUBLIC_BEARER_TOKEN,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedEvaluationData),
+    });
+
+    console.log("Response status:", response.status);
+
+    if (!response.ok) {
+      await handleError(response);
+    }
+
+    const data = await response.json();
+    console.log("Response data:", data);
+    return data;
+  } catch (error) {
+    console.error("Error adding new Student Evaluation:", error);
+    throw error;
+  }
 }
