@@ -1,10 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./AddStudentForm.module.css";
-import { addStudent, uploadImage } from "@/functions/apiCalls";
+import { addStudent, uploadImage, getAllSchoolClasses } from "@/functions/api";
 import Image from "next/image";
+import { useSortContext } from "@/providers/SortProvider";
 
 export default function AddStudentForm() {
+  const { sortItems } = useSortContext();
   const [formData, setFormData] = useState({
     idil: "",
     firstName: "",
@@ -23,6 +25,26 @@ export default function AddStudentForm() {
     img: "",
     personalNotes: "",
   });
+
+  const [classes, setClasses] = useState([]);
+
+  useEffect(() => {
+    async function fetchClasses() {
+      try {
+        const response = await getAllSchoolClasses();
+        if (response.status === "success" && Array.isArray(response.data)) {
+          setClasses(response.data);
+        } else {
+          throw new Error("Invalid data structure");
+        }
+      } catch (error) {
+        console.error("Error fetching classes:", error);
+        setError("שגיאה בטעינת רשימת הכיתות");
+        setClasses([]);
+      }
+    }
+    fetchClasses();
+  }, []);
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [error, setError] = useState(null);
@@ -154,6 +176,46 @@ export default function AddStudentForm() {
           </div>
         </div>
       );
+    } else if (field === "class") {
+      const sortedClasses = sortItems(classes, "className");
+      return (
+        <div key={field} className={styles.inputGroup}>
+          <label htmlFor={field}>{fieldLabels[field]}</label>
+          <select
+            id={field}
+            name={field}
+            value={
+              formData.class
+                ? classes.find((c) => c.className === formData.class)?._id || ""
+                : ""
+            }
+            onChange={(e) => {
+              const selectedClass = classes.find(
+                (c) => c._id === e.target.value
+              );
+              handleChange({
+                target: {
+                  name: "class",
+                  value: selectedClass ? selectedClass.className : "",
+                },
+              });
+            }}
+            required
+            className={styles.selectInput}
+          >
+            <option value="">בחר כיתה</option>
+            {sortedClasses.length > 0 ? (
+              sortedClasses.map((c) => (
+                <option key={c._id} value={c._id}>
+                  {c.className} - {c.teacher}
+                </option>
+              ))
+            ) : (
+              <option disabled>אין כיתות זמינות</option>
+            )}
+          </select>
+        </div>
+      );
     }
     const [parent, child] = field.split(".");
     const value = child ? formData[parent][child] : formData[field];
@@ -193,10 +255,10 @@ export default function AddStudentForm() {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      {error && <div className={styles.error}>{error}</div>}
-      {success && <div className={styles.success}>{success}</div>}
       {renderField("idil")}
       <div className={styles.formGrid}>{fieldOrder.map(renderField)}</div>
+      {error && <div className={styles.error}>{error}</div>}
+      {success && <div className={styles.success}>{success}</div>}
       <button type="submit" className={styles.submitButton}>
         הוסף תלמיד
       </button>

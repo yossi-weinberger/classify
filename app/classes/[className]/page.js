@@ -1,5 +1,5 @@
 import StudentsGrid from "@/components/studentsGrid/studentsGrid";
-import { getStudentsByClassId } from "@/functions/apiCalls";
+import { getStudentsByClassId } from "@/functions/api";
 
 export default async function StudentsPage({ params: { className } }) {
   try {

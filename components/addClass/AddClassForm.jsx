@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import styles from "./AddClassForm.module.css";
-import { addClass } from "@/functions/apiCalls";
+// import { addClass } from "@/functions/api";
+import { addClass } from "@/functions/api";
 
 export default function AddClassForm() {
   const [formData, setFormData] = useState({

@@ -1,5 +1,5 @@
 import SchoolClassesGrid from "@/components/SchoolClassesGrid/SchoolClassesGrid";
-import { getAllSchoolClasses } from "@/functions/apiCalls";
+import { getAllSchoolClasses } from "@/functions/api";
 import Image from "next/image";
 
 export default async function SchoolClassesPage() {
