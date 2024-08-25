@@ -111,7 +111,7 @@
 
   .grid-item {
     width: 60%; /* Reduce width by 40% */
-    height: 600px; /* Doubled height */
+    height: 350px; /* Doubled height */
     padding: 12px;
     margin: 0 auto; /* Center the item */
     display: flex;
@@ -119,7 +119,7 @@
   }
 
   .grid-item:hover {
-    height: 330px;
+    height: 355px;
   }
 
   .grid-item img {
@@ -154,7 +154,7 @@
     padding: 0 10px;
   }
   .grid-item img {
-    height: 200px;
+    /* height: 200px; */
     width: auto;
     object-fit: contain;
     margin-bottom: 10px;
@@ -166,12 +166,12 @@
   }
 
   .grid-item {
-    height: 330px;
+    height: 350px;
     padding: 10px;
   }
 
   .grid-item:hover {
-    height: 560px;
+    height: 355px;
   }
 
   .grid-item h2 {

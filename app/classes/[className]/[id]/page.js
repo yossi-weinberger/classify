@@ -1,4 +1,4 @@
-import { getStudentByClassAndStudentId } from "@/functions/apiCalls";
+import { getStudentByClassAndStudentId } from "@/functions/api";
 import StudentDetails from "@/components/StudentDetails/StudentDetails";
 
 export default async function StudentPage({ params }) {

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import styles from "./StudentDetails.module.css";
-import { deleteStudent as apiDeleteStudent } from "@/functions/apiCalls";
+import { deleteStudent as apiDeleteStudent } from "@/functions/api";
 import { revalidateStudentCache } from "@/app/actions";
 import { useRouter } from "next/navigation";
 

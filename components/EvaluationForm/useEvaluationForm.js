@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addEvaluation } from "@/functions/apiCalls";
+import { addEvaluation } from "@/functions/api";
 
 const initialFormState = {
   student_idil: "",

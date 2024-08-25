@@ -1,9 +1,6 @@
 // EvaluationForm/useStudents.js
 import { useState, useEffect } from "react";
-import {
-  getAllSchoolClasses,
-  getStudentsByClassId,
-} from "@/functions/apiCalls";
+import { getAllSchoolClasses, getStudentsByClassId } from "@/functions/api";
 
 export function useStudents(selectedClassId) {
   const [classes, setClasses] = useState([]);

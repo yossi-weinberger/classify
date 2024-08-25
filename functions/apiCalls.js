@@ -299,15 +299,6 @@ export async function addClass(classData) {
   }
 }
 
-// // Adds an evaluation (dummy function for future implementation)
-// export async function addEvaluation(evaluationData) {
-//   // זו פונקציית דמה. בעתיד, כאן תהיה הלוגיקה לשליחת הנתונים לשרת.
-//   console.log("Sending evaluation data:", evaluationData);
-//   return new Promise((resolve) =>
-//     setTimeout(() => resolve({ success: true }), 1000)
-//   );
-// }
-
 // Adds a new student evaluation
 export async function addEvaluation(evaluationData) {
   console.log("addStudentEvaluation called with:", evaluationData);
