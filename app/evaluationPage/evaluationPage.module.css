@@ -80,6 +80,7 @@
   .formWrapper {
     flex-grow: 1;
     overflow-y: auto;
+    margin-bottom: 40px;
   }
   
   .formContainer {
