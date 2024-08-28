@@ -5,6 +5,7 @@ import "./studentsGrid.css";
 import { useState, useEffect } from "react";
 import { useSortContext } from "@/providers/SortProvider";
 import { Sort_search } from "@/components/sort-search/sort-search";
+import Loading from "../loading/loading";
 
 export default function StudentsGrid({ students, classInfo }) {
   const { sortItems } = useSortContext();
@@ -18,11 +19,10 @@ export default function StudentsGrid({ students, classInfo }) {
   const studentsToShow =
     isClient && Array.isArray(students)
       ? sortItems(
-          students.filter(
-            (student) =>
-              (student?.firstName + " " + student?.lastName)
-                .toLowerCase()
-                .includes((search || "").toLowerCase())
+          students.filter((student) =>
+            (student?.firstName + " " + student?.lastName)
+              .toLowerCase()
+              .includes((search || "").toLowerCase())
           ),
           "firstName"
         ).map((student) => (
@@ -31,7 +31,7 @@ export default function StudentsGrid({ students, classInfo }) {
       : [];
 
   if (!isClient) {
-    return <div className="loading">טוען...</div>;
+    return <Loading />;
   }
 
   return (

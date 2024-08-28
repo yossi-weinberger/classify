@@ -4,8 +4,9 @@ import { nanoid } from "nanoid";
 import Link from "next/link";
 import styles from "./SchoolClassesGrid.module.css";
 import { useState, useEffect } from "react";
-import { useSortContext } from '@/providers/SortProvider';
-import { Sort_search } from '@/components/sort-search/sort-search';
+import { useSortContext } from "@/providers/SortProvider";
+import { Sort_search } from "@/components/sort-search/sort-search";
+import Loading from "../loading/loading";
 
 export default function SchoolClassesGrid({ SchoolClasses }) {
   const { sortItems } = useSortContext();
@@ -30,7 +31,7 @@ export default function SchoolClassesGrid({ SchoolClasses }) {
       : [];
 
   if (!isClient) {
-    return <div className={styles.loading}>טוען...</div>;
+    return <Loading />;
   }
 
   return (
