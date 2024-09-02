@@ -142,6 +142,31 @@
   margin-bottom: 20px;
 }
 
+.errorContainer {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  background-color: #fff0f0;
+}
+
+.errorTitle {
+  color: #ff0000;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.errorList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.errorItem {
+  color: #ff0000;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .formGrid {
     grid-template-columns: 1fr;

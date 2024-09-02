@@ -5,6 +5,7 @@ const initialFormState = {
   student_idil: "",
   first_name: "",
   last_name: "",
+  full_name: "",
   gender: "",
   date_of_birth: "",
   age_at_evaluation: null,
