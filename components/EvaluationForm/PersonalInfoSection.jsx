@@ -45,18 +45,13 @@ export default function PersonalInfoSection({ formData, handleChange }) {
           <div className={styles.formRow}>
             <div className={styles.inputGroup}>
               <label htmlFor="gender">מגדר</label>
-              <select
+              <input
                 id="gender"
                 name="gender"
                 value={formData.gender}
-                onChange={handleChange}
-                disabled
-              >
-                <option value="">בחר</option>
-                <option value="male">זכר</option>
-                <option value="female">נקבה</option>
-                <option value="other">אחר</option>
-              </select>
+                type="text"
+                readOnly
+              />
             </div>
             <div className={styles.inputGroup}>
               <label htmlFor="date_of_birth">תאריך לידה</label>
