@@ -36,7 +36,7 @@ export default function AddClassPage() {
           </div>
         </div>
         <div className={styles.rightContent}>
-          <div className={styles.title}>הוספת כיתה חדש</div>
+          <div className={styles.title}>הוספת כיתה חדשה</div>
           <div className={styles.formWrapper}>
             <div className={styles.formContainer}>
               <AddClassForm />

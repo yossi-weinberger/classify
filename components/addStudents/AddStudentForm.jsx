@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useSortContext } from "@/providers/SortProvider";
 import { validateForm } from "./validations";
 import Loading from "../loading/loading";
+import SubmitLoading from "../submitLoading/submitLoading";
 
 export default function AddStudentForm() {
   const { sortItems } = useSortContext();
@@ -322,7 +323,13 @@ export default function AddStudentForm() {
         className={styles.submitButton}
         disabled={isLoading}
       >
-        {isLoading ? "מוסיף תלמיד..." : "הוסף תלמיד"}
+        {isLoading ? (
+          <div className={styles.loadingWrapper}>
+            <SubmitLoading />
+          </div>
+        ) : (
+          "הוסף תלמיד"
+        )}
       </button>
     </form>
   );

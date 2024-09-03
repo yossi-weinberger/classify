@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import styles from "./StudentDetails.module.css";
-import { addPersonalNoteToStudent } from "../../functions/apiCalls.js";
+import { addPersonalNoteToStudent } from "../../functions/api/index";
+import SubmitLoading from "../submitLoading/submitLoading";
 
 function formatDate(dateString) {
   const [year, month, day] = dateString.split("-");
@@ -60,7 +61,13 @@ export default function PersonalNotes({ idil, notes, onAddNote }) {
             disabled={isLoading}
           />
           <button type="submit" disabled={isLoading}>
-            {isLoading ? "מוסיף..." : "הוסף הערה"}
+            {isLoading ? (
+              <div className={styles.loadingWrapper}>
+                <SubmitLoading />
+              </div>
+            ) : (
+              "הוסף הערה"
+            )}
           </button>
         </form>
         {error && <p className={styles.errorMessage}>{error}</p>}

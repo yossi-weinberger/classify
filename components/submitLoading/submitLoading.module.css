@@ -1,0 +1,40 @@
+.loadingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.submitLoader {
+  --size: 20px;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.box {
+  width: var(--size);
+  height: var(--size);
+  animation: rotate 2s infinite;
+  border-radius: 5px;
+  background: #c3d4d9;
+  border-color: #55b7a8;
+  border-style: solid;
+}
+
+.box:nth-child(2) {
+  animation-delay: 0.25s;
+  background: #55b7a8;
+  border-color: #064f3b;
+  border-style: solid;
+}
+
+.box:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes rotate {
+  50% {
+    transform: rotate(180deg);
+  }
+}
