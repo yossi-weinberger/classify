@@ -1,8 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import styles from "./AddClassForm.module.css";
-// import { addClass } from "@/functions/api";
 import { addClass } from "@/functions/api";
+import { validateForm } from "./validations";
+import SubmitLoading from "../submitLoading/submitLoading";
+import Loading from "../loading/loading";
 
 export default function AddClassForm() {
   const [formData, setFormData] = useState({
@@ -13,27 +15,44 @@ export default function AddClassForm() {
 
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [validationErrors, setValidationErrors] = useState({});
 
-  const handleChange = (e) => {
+  const handleChange = useCallback((e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
-  };
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
+    setSuccess(null);
+    setValidationErrors({});
+
+    const errors = validateForm(formData);
+    if (Object.keys(errors).length > 0) {
+      setValidationErrors(errors);
+      return;
+    }
+
+    setIsLoading(true);
+
     try {
-      const result = await addClass(formData);
+      await addClass(formData);
       setSuccess(`כיתה ${formData.className} נוספה בהצלחה!`);
       setFormData({
         className: "",
         teacher: "",
+        img: "https://res.cloudinary.com/df4ysoodx/image/upload/v1721035122/fmvvwja3emakk7ktgb1d.jpg",
       });
     } catch (error) {
       console.error("Error adding Class:", error);
-      setError(error.message || "An error occurred while adding the Class.");
+      setError(error.message || "אירעה שגיאה בעת הוספת הכיתה.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -44,32 +63,56 @@ export default function AddClassForm() {
 
   const fieldOrder = ["className", "teacher"];
 
-  const renderField = (field) => {
-    const value = formData[field];
-    const label = fieldLabels[field];
+  const renderField = useCallback(
+    (field) => {
+      const value = formData[field];
+      const label = fieldLabels[field];
 
-    return (
-      <div key={field} className={styles.inputGroup}>
-        <label htmlFor={field}>{label}</label>
-        <input
-          id={field}
-          name={field}
-          value={value}
-          onChange={handleChange}
-          placeholder={label}
-          type="text"
-        />
-      </div>
-    );
-  };
-
+      return (
+        <div key={field} className={styles.inputGroup}>
+          <label htmlFor={field}>{label}</label>
+          <input
+            id={field}
+            name={field}
+            value={value}
+            onChange={handleChange}
+            placeholder={label}
+            type="text"
+          />
+        </div>
+      );
+    },
+    [formData, handleChange]
+  );
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      {error && <div className={styles.error}>{error}</div>}
-      {success && <div className={styles.success}>{success}</div>}
       <div className={styles.formGrid}>{fieldOrder.map(renderField)}</div>
-      <button type="submit" className={styles.submitButton}>
-        הוסף כיתה
+      {Object.keys(validationErrors).length > 0 && (
+        <div className={styles.errorContainer}>
+          <p className={styles.errorTitle}>יש לתקן את השגיאות הבאות:</p>
+          <div className={styles.errorList}>
+            {Object.entries(validationErrors).map(([field, error]) => (
+              <p key={field} className={styles.errorItem}>
+                {`${fieldLabels[field]}: ${error}`}
+              </p>
+            ))}
+          </div>
+        </div>
+      )}
+      {success && <div className={styles.success}>{success}</div>}
+      {error && <div className={styles.error}>{error}</div>}
+      <button
+        type="submit"
+        className={styles.submitButton}
+        disabled={isLoading}
+      >
+        {isLoading ? (
+          <div className={styles.loadingWrapper}>
+            <SubmitLoading />
+          </div>
+        ) : (
+          "הוסף כיתה"
+        )}
       </button>
     </form>
   );
