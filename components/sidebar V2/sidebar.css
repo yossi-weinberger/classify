@@ -60,8 +60,7 @@ img.logo-sidebar:hover {
 }
 
 .link:hover .link-content,
-.link.current .link-content,
-.link[href^="/classes"] .link-content {
+.link.current .link-content {
   color: rgb(17, 0, 86);
   background-color: #c3d4d9;
   border-radius: 10px;
@@ -69,10 +68,17 @@ img.logo-sidebar:hover {
 }
 
 .link:hover .link-icon,
-.link.current .link-icon,
-.link[href^="/classes"] .link-icon {
+.link.current .link-icon {
   filter: none;
   transition: filter 0.3s ease;
+}
+
+.link[href^="/classes"].active .link-content,
+.link[href^="/classes"].active .link-icon {
+  color: rgb(17, 0, 86);
+  background-color: #c3d4d9;
+  border-radius: 10px;
+  filter: none;
 }
 
 .link-content {
