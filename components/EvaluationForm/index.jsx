@@ -42,10 +42,9 @@ export default function EvaluationForm() {
           main_disability: student.mainDisability || "",
           secondary_disability: student.secondaryDisability || "",
           image_url: student.img || "",
-          // ... כל שאר השדות הרלוונטיים
         });
       } else {
-        setFormData({}); // איפוס הטופס אם לא נבחר תלמיד
+        setFormData({});
       }
     },
     [setFormData]

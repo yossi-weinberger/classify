@@ -11,7 +11,7 @@ const StudentHeader = ({ student, classInfo }) => {
           alt={`תמונה של ${student.firstName} ${student.lastName}`}
           width={200}
           height={200}
-          style={{ width: "100%", height: "auto" }} // זה מחליף את layout="responsive"
+          style={{ width: "100%", height: "auto" }} 
         />
       </div>
       <div className={styles.studentInfo}>

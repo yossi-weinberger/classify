@@ -96,11 +96,11 @@ export const links = [
     href: "/dashboard",
     icon: <DashboardIcon />,
   },
-  {
-    title: "נתונים",
-    href: "/data",
-    icon: <DataIcon />,
-  },
+  // {
+  //   title: "נתונים",
+  //   href: "/data",
+  //   icon: <DataIcon />,
+  // },
   {
     title: "אודות",
     href: "/about",

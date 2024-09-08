@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Container } from "@chakra-ui/react";
-import Loading from "@/components/loading/loading"; // ודא שהנתיב נכון
+import Loading from "@/components/loading/loading";
 import "./dashboard.css";
 
 export default function Dashboard() {

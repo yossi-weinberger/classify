@@ -1,4 +1,3 @@
-// EvaluationForm/useStudents.js
 import { useState, useEffect } from "react";
 import { getAllSchoolClasses, getStudentsByClassId } from "@/functions/api";
 
@@ -15,7 +14,7 @@ export function useStudents(selectedClassId) {
         setLoading(true);
         console.log("Calling getAllSchoolClasses");
         const classesData = await getAllSchoolClasses();
-        console.log("Received classes data:", classesData);
+        // console.log("Received classes data:", classesData);
         setClasses(classesData.data);
         setLoading(false);
       } catch (err) {
@@ -36,7 +35,7 @@ export function useStudents(selectedClassId) {
       try {
         setLoading(true);
         const studentsData = await getStudentsByClassId(selectedClassId);
-        console.log("Received students data:", studentsData);
+        // console.log("Received students data:", studentsData);
         setStudents(studentsData.data.students);
         setLoading(false);
       } catch (err) {

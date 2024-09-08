@@ -23,7 +23,7 @@ export async function getStudentByClassAndStudentId(classId, studentId) {
 
 // Adds a personal note to a student
 export async function addPersonalNoteToStudent(idil, note) {
-  console.log("addPersonalNoteToStudent called with:", { idil, note });
+  // console.log("addPersonalNoteToStudent called with:", { idil, note });
 
   if (!idil) {
     console.error("idil is undefined or null");
@@ -32,9 +32,9 @@ export async function addPersonalNoteToStudent(idil, note) {
 
   try {
     const url = `${SERVER_URL}/students/${idil}/notes`;
-    console.log("Sending request to:", url);
-    console.log("Note text:", note);
-    console.log("Bearer Token:", process.env.NEXT_PUBLIC_BEARER_TOKEN);
+    // console.log("Sending request to:", url);
+    // console.log("Note text:", note);
+    // console.log("Bearer Token:", process.env.NEXT_PUBLIC_BEARER_TOKEN);
 
     const data = await handleApiRequest(url, {
       method: "POST",
@@ -45,7 +45,7 @@ export async function addPersonalNoteToStudent(idil, note) {
       body: JSON.stringify({ note: note }),
     });
 
-    console.log("Response data:", data);
+    // console.log("Response data:", data);
     return data;
   } catch (error) {
     console.error("Error adding personal note:", error);
@@ -55,7 +55,7 @@ export async function addPersonalNoteToStudent(idil, note) {
 
 // Adds a new student
 export async function addStudent(studentData) {
-  console.log("addStudent called with:", studentData);
+  // console.log("addStudent called with:", studentData);
 
   if (!studentData.idil) {
     console.error("idil is undefined or null");
@@ -86,8 +86,8 @@ export async function addStudent(studentData) {
 
   try {
     const url = `${SERVER_URL}/students/`;
-    console.log("Sending request to:", url);
-    console.log("Updated student data:", updatedStudentData);
+    // console.log("Sending request to:", url);
+    // console.log("Updated student data:", updatedStudentData);
 
     const data = await handleApiRequest(url, {
       method: "POST",
@@ -98,7 +98,7 @@ export async function addStudent(studentData) {
       body: JSON.stringify(updatedStudentData),
     });
 
-    console.log("Response data:", data);
+    // console.log("Response data:", data);
     return data;
   } catch (error) {
     console.error("Error adding new student:", error);
@@ -118,10 +118,10 @@ export async function deleteStudent(idil) {
       },
     });
 
-    console.log(
-      "Response data from deleteStudent:",
-      JSON.stringify(data, null, 2)
-    );
+    // console.log(
+    //   "Response data from deleteStudent:",
+    //   JSON.stringify(data, null, 2)
+    // );
     return data;
   } catch (error) {
     console.error("Error in deleteStudent:", error);

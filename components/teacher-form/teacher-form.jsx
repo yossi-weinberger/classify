@@ -5,17 +5,17 @@ import { useState, useEffect, useRef } from "react";
 import "./teacher-form.css";
 
 export default function TeacherForm() {
-  const [iframeHeight, setIframeHeight] = useState("2156px"); // גובה ברירת מחדל
+  const [iframeHeight, setIframeHeight] = useState("2156px"); 
   const iframeRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
       if (iframeRef.current) {
-        setIframeHeight(`${window.innerHeight - 200}px`); // מחסיר 200px עבור תמונה וכותרת
+        setIframeHeight(`${window.innerHeight - 200}px`);
       }
     };
 
-    handleResize(); // קריאה ראשונית
+    handleResize(); 
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -26,7 +26,7 @@ export default function TeacherForm() {
       <Container className="teacherForm-container">
         <div className="image-wrapper">
           <Image
-            src="/logoWide.jpg" // החלף זאת בנתיב לתמונה שלך
+            src="/logoWide.jpg"
             alt="Teacher Form Header"
             width={200}
             height={100}

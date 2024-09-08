@@ -1,4 +1,3 @@
-// "use client";
 import Link from "next/link";
 import { links } from "@/data/links";
 import { usePathname } from "next/navigation";

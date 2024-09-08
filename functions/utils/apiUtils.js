@@ -19,7 +19,7 @@ export async function handleApiRequest(url, options = {}) {
     }
 
     const data = await response.json();
-    console.log("Response data:", data);
+    // console.log("Response data:", data);
     return data;
   } catch (error) {
     console.error("שגיאת API:", error);

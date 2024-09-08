@@ -1,4 +1,3 @@
-// "use client";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { links } from "@/data/links";
@@ -43,7 +42,6 @@ export default function Sidebar() {
             alt="Logo"
             width="40"
             height="40"
-            // layout="responsive"
           />
         </Link>
       </div>
