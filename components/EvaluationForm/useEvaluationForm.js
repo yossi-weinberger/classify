@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { addEvaluation } from "@/functions/api";
 
+// חישוב הרבעון הנוכחי
+const getCurrentQuarter = () => {
+  const month = new Date().getMonth() + 1;
+  return Math.ceil(month / 3);
+};
+
 const initialFormState = {
   student_idil: "",
   first_name: "",
@@ -23,7 +29,7 @@ const initialFormState = {
   number_of_siblings: null,
   evaluation_date: new Date().toISOString().split("T")[0],
   year: new Date().getFullYear(),
-  phase: 1,
+  phase: getCurrentQuarter(),
   social_competence_1: 1,
   social_competence_2: 1,
   social_competence_3: 1,

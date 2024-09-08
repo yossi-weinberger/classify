@@ -1,20 +1,26 @@
-/* Grid container styles */
 .gridContainer {
+  direction: rtl;
   display: flex;
   flex-direction: column;
   gap: 30px;
   margin: 30px auto;
   width: 70%;
   font-family: "Heebo", Arial, sans-serif;
-  justify-content: center;
-  direction: rtl; /* Added direction: rtl; */
+}
+
+.readMore {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 /* Grid layout */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
   direction: rtl;
 }
 
@@ -24,7 +30,8 @@
   color: black;
   display: flex;
   flex-direction: column;
-  height: auto;
+  justify-content: space-between;
+  height: 400px;
   padding: 25px;
   border: 1.5px solid #0f3849;
   border-radius: 25px;
@@ -34,47 +41,49 @@
   overflow: hidden;
 }
 
-/* Hover effect for grid items */
 .gridItem:hover {
   border: 2px solid #0f3849;
-  transform: scale(1.05);
-  transition: all 200ms ease;
+  transform: scale(1.02);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Image container styles */
-.imageContainer {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-
-/* Image styles */
+/* Image styles for both classes and students */
+.gridItem img,
 .imageContainer img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  /* object-fit: cover; */
+  margin-bottom: 15px;
   transition: 200ms ease;
 }
 
-/* Image hover effect */
+.gridItem img:hover,
 .imageContainer img:hover {
-  transition: 200ms ease;
   transform: rotate(2deg);
 }
 
-/* Class label styles */
+/* Class specific styles */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  overflow: visible;
+}
+
 .classLabel {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: transparent;
+  padding: 10px;
+  border-radius: 5px;
   text-align: center;
 }
 
-/* Class name style */
 .className {
   display: block;
   font-size: 25px;
@@ -82,7 +91,6 @@
   color: #333;
 }
 
-/* Class number style */
 .classNumber {
   display: block;
   font-size: 35px;
@@ -95,28 +103,20 @@
   padding: 10px;
 }
 
-/* Heading style */
-.gridItem h2 {
+.gridItem h2,
+.studentName {
   font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
-/* Paragraph style */
-.gridItem p {
+.gridItem p,
+.studentId {
   font-size: 15px;
-  direction: rtl;
   text-align: center;
-}
-
-/* Read more section styles */
-.readMore {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  margin-bottom: 15px;
 }
 
 /* Button styles */
@@ -127,16 +127,17 @@
   border: 3px solid #0f3849;
   padding: 5px;
   margin: 5px;
+  margin-top: auto;
   font-size: 15px;
   cursor: pointer;
   font-family: "Heebo", sans-serif;
+  background-color: transparent;
+  transition: 200ms ease;
 }
 
-/* Button hover effect */
 .gridItem button:hover {
   background-color: #0f3849;
   color: aliceblue;
-  transition: 200ms ease;
 }
 
 /* Loading state style */
@@ -145,36 +146,74 @@
   font-size: 18px;
   padding: 20px;
 }
-/* Media query for tablets and larger mobile phones */
-@media screen and (max-width: 1024px) {
+
+/* Media queries */
+@media screen and (max-width: 1024px) and (min-width: 601px) {
   .gridContainer {
     width: 95%;
   }
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 20px;
   }
 
   .gridItem {
-    width: 60%; /* Reduce width by 40% */
-    height: 350px; /* Doubled height */
-    padding: 12px;
-    margin: 0 auto; /* Center the item */
-    display: flex;
-    flex-direction: column;
+    height: auto;
+    max-width: 400px;
+    margin: 0 auto;
   }
 
-  .imageContainer {
-    height: 200px;
-    width: auto;
-    margin-bottom: 10px;
+  .imageContainer,
+  .gridItem img {
+    height: 180px;
   }
 
-  .imageContainer img {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
+  .className {
+    font-size: 22px;
+  }
+
+  .classNumber {
+    font-size: 30px;
+  }
+
+  .gridItem h2,
+  .studentName {
+    font-size: 20px;
+  }
+
+  .gridItem p,
+  .studentId {
+    font-size: 16px;
+  }
+
+  .gridItem button {
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gridContainer {
+    width: 90%;
+    padding: 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gridItem {
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  .imageContainer,
+  .gridItem img {
+    height: 160px;
   }
 
   .className {
@@ -185,75 +224,22 @@
     font-size: 28px;
   }
 
-  .gridItem h2 {
-    font-size: 16px;
-    margin: 8px 0;
-  }
-
-  .gridItem p {
-    font-size: 13px;
-    margin: 8px 0;
-  }
-
-  .gridItem button {
-    height: 32px;
-    font-size: 13px;
-    padding: 3px;
-    margin: 3px;
-  }
-}
-
-/* Media query for smaller mobile phones */
-@media screen and (max-width: 600px) {
-  .gridContainer {
-    width: 100%;
-    padding: 0 10px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .gridItem {
-    height: 330px;
-    padding: 10px;
-  }
-
-  .imageContainer {
-    height: 200px;
-    width: auto;
-    margin-bottom: 10px;
-  }
-
-  .imageContainer img {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-  }
-
-  .className {
+  .gridItem h2,
+  .studentName {
     font-size: 18px;
+    margin: 10px 0;
   }
 
-  .classNumber {
-    font-size: 24px;
-  }
-
-  .gridItem h2 {
-    font-size: 15px;
-    margin: 6px 0;
-  }
-
-  .gridItem p {
-    font-size: 12px;
-    margin: 6px 0;
+  .gridItem p,
+  .studentId {
+    font-size: 14px;
+    margin: 8px 0;
   }
 
   .gridItem button {
-    height: 30px;
-    font-size: 12px;
-    padding: 2px;
-    margin: 2px;
+    height: 36px;
+    font-size: 14px;
+    padding: 4px;
+    margin: 4px;
   }
 }

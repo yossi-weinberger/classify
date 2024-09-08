@@ -2,7 +2,7 @@ import { handleApiRequest, SERVER_URL } from "../utils/apiUtils";
 
 // Adds a new class
 export async function addClass(classData) {
-  console.log("addClass called with:", classData);
+  // console.log("addClass called with:", classData);
 
   if (!classData.className || !classData.teacher) {
     console.error("fields is undefined or null");
@@ -11,8 +11,8 @@ export async function addClass(classData) {
 
   try {
     const url = `${SERVER_URL}/Classes/`;
-    console.log("Sending request to:", url);
-    console.log("Updated Class data:", classData);
+    // console.log("Sending request to:", url);
+    // console.log("Updated Class data:", classData);
 
     const data = await handleApiRequest(url, {
       method: "POST",
@@ -26,13 +26,13 @@ export async function addClass(classData) {
     return data;
   } catch (error) {
     console.error("Error adding new Class:", error);
-    throw error; // זה יכלול את הודעת השגיאה המפורטת
+    throw error;
   }
 }
 
 // Fetches all school classes
 export async function getAllSchoolClasses() {
-  console.log("getAllSchoolClasses called");
+  // console.log("getAllSchoolClasses called");
   try {
     const url = `${SERVER_URL}/classes`;
     const data = await handleApiRequest(url, {
@@ -44,7 +44,7 @@ export async function getAllSchoolClasses() {
     return data;
   } catch (error) {
     console.error("Failed to fetch school classes:", error);
-    throw error; // זה יכלול את הודעת השגיאה המפורטת
+    throw error;
   }
 }
 

@@ -15,14 +15,12 @@ export default function ProgressChart({ student }) {
       "https://lookerstudio.google.com/embed/reporting/8db54529-10af-4baf-8571-3b10177e35fe/page/p_65d4chzjid";
 
     const params = {
-      "ds0.studentid": student.idil.toString(), // השתמש בשם המדויק של הפרמטר ומומר למחרוזת
+      "ds0.studentid": student.idil.toString(),
     };
     const paramsString = JSON.stringify(params);
     const encodedParams = encodeURIComponent(paramsString);
 
     const fullUrl = `${baseUrl}?params=${encodedParams}`;
-    // console.log("Generated URL:", fullUrl);
-    // console.log("Student ID used for filtering:", student.idil);
 
     setUrl(fullUrl);
   }, [student]);
@@ -49,7 +47,7 @@ export default function ProgressChart({ student }) {
           <iframe
             width="100%"
             height="280"
-            src={url} // שימוש ב-url במקום fullUrl
+            src={url}
             frameBorder="0"
             allowFullScreen
           ></iframe>

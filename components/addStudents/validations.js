@@ -1,5 +1,3 @@
-// validations.js
-
 export const validateIdil = (idil) => {
   return /^\d{9}$/.test(idil) ? null : "מספר זהות חייב להכיל 9 ספרות";
 };

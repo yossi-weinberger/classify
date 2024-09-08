@@ -1,11 +1,14 @@
 div.toolbar {
   display: flex;
+  flex-wrap: nowrap;
   direction: rtl;
   align-items: center;
   justify-content: flex-start;
+  /* justify-content: space-evenly; */
   overflow-x: auto;
   padding: 10px 0;
   width: 100%;
+  gap: 10px;
 }
 
 .toolbar-element {
@@ -13,7 +16,6 @@ div.toolbar {
   border-radius: 10px;
   border: #0f3849 solid 2px;
   padding: 10px;
-  margin-left: 10px;
   font-size: 15px;
   cursor: pointer;
   background-color: white;
@@ -21,10 +23,6 @@ div.toolbar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
   flex-shrink: 0;
-}
-
-.toolbar-element:first-child {
-  margin-right: 0;
 }
 
 .toolbar-element:hover {
@@ -52,22 +50,46 @@ select.toolbar-element {
   padding-right: 25px;
 }
 
+button.toolbar-element.add-new {
+  min-width: max-content;
+}
+
 button.toolbar-element.add-new:hover {
   background-color: #0f3849;
   color: aliceblue;
   transition: 200ms ease;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   div.toolbar {
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
     justify-content: flex-start;
   }
 
-  input.toolbar-element.input {
-    width: 150px;
+  .toolbar-element {
+    flex: 1 1 calc(50% - 5px);
+    margin-bottom: 10px;
+    min-width: max-content;
+  }
+
+  select.toolbar-element,
+  input.toolbar-element.input,
+  button.toolbar-element.add-new {
+    flex: 1 1 calc(50% - 5px);
   }
 
   input.toolbar-element.input:focus {
-    width: auto;
+    flex: 1 1 calc(50% - 5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar-element,
+  select.toolbar-element,
+  input.toolbar-element.input,
+  input.toolbar-element.input:focus,
+  button.toolbar-element.add-new {
+    flex: 1 1 100%;
   }
 }

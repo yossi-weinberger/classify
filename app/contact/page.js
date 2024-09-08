@@ -1,4 +1,3 @@
-// app/contact/page.js
 import Contact from "@/components/contact/contact";
 import styles from "./ContactPage.module.css";
 import Image from "next/image";

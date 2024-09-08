@@ -11,8 +11,8 @@ export async function addEvaluation(evaluationData) {
 
   try {
     const url = `${SERVER_URL}/evaluations/`;
-    console.log("Sending request to:", url);
-    console.log("Evaluation data:", evaluationData);
+    // console.log("Sending request to:", url);
+    // console.log("Evaluation data:", evaluationData);
 
     const data = await handleApiRequest(url, {
       method: "POST",
@@ -23,7 +23,7 @@ export async function addEvaluation(evaluationData) {
       body: JSON.stringify(evaluationData),
     });
 
-    console.log("Response data:", data);
+    // console.log("Response data:", data);
     return data;
   } catch (error) {
     console.error("Error adding new Student Evaluation:", error);

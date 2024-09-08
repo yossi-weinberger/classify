@@ -1,4 +1,5 @@
 import StudentsGrid from "@/components/studentsGrid/studentsGrid";
+import GenericGrid from "@/components/GenericGrid/GenericGrid";
 import { getStudentsByClassId } from "@/functions/api";
 
 export default async function StudentsPage({ params: { className } }) {
@@ -11,10 +12,11 @@ export default async function StudentsPage({ params: { className } }) {
 
     return (
       <div>
-        <StudentsGrid
+        {/* <StudentsGrid
           students={studentsData.data.students}
           classInfo={studentsData.data.class}
-        />
+        /> */}
+        <GenericGrid items={studentsData.data.students} type="students" classInfo={studentsData.data.class} />
       </div>
     );
   } catch (error) {
