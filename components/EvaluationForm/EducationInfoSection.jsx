@@ -30,7 +30,7 @@ export default function EducationInfoSection({ formData, handleChange }) {
       </div>
       <div className={styles.formRow}>
         <div className={styles.inputGroup}>
-          <label htmlFor="main_disability">לקות עיקרית</label>
+          <label htmlFor="main_disability">אבחון עיקרי</label>
           <input
             id="main_disability"
             name="main_disability"
