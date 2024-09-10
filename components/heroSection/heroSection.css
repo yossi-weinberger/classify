@@ -64,24 +64,12 @@ img.logo {
   height: 100%;
 }
 
-img.purple-circle {
-  position: fixed;
-  top: 50%;
-  /* left: 50%; */
-  transform: translate(-0%, -50%);
-  width: 35vw;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  z-index: 1;
-}
-
 img.screen-image {
   position: fixed;
   top: 50%;
   transform: translate(10%, -50%);
-  width: 45vw;
-  max-width: 100%;
+  width: 40vw;
+  max-width: 80%;
   height: auto;
   object-fit: contain;
   z-index: 2;
@@ -136,9 +124,8 @@ img.screen-image {
   color: #ffffff;
   transition: 0.3s ease;
 }
-/* השאר את כל הקוד הקיים כמו שהוא, ורק הוסף/עדכן את החלק הבא בסוף הקובץ */
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 830px) {
   .hero-section {
     padding: 20px;
     min-height: auto;
@@ -148,19 +135,20 @@ img.screen-image {
   }
 
   .logo-wrapper {
-    width: 100%;
+    width: 80%;
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    /* justify-content: center; */
+    margin-bottom: 7px;
   }
 
   .logo {
-    max-width: 80%;
+    max-width: 60%;
+    width: 60%;
     height: auto;
   }
 
   .site-title {
-    font-size: clamp(1.2rem, 5vw, 2rem);
+    font-size: clamp(1rem, 4vw, 2rem);
     text-align: center;
     margin-bottom: 20px;
   }
@@ -173,7 +161,7 @@ img.screen-image {
 
   .image-column {
     order: -1;
-    width: 100%;
+    width: 80%;
   }
 
   .image-wrapper {
@@ -182,13 +170,13 @@ img.screen-image {
     justify-content: center;
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
 
   img.screen-image {
     position: static;
     transform: none;
-    width: 100%;
+    width: 80%;
     max-width: 300px;
     height: auto;
   }
@@ -204,8 +192,8 @@ img.screen-image {
 
   .features-grid {
     align-items: right;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    /* margin-top: 1rem; */
+    /* margin-bottom: 1rem; */
   }
 
   .feature {
@@ -215,7 +203,7 @@ img.screen-image {
   .cta-button {
     font-size: clamp(0.8rem, 4vw, 1rem);
     padding: 0.8em 2.5em;
-    margin-top: 20px;
+    /* margin-top: 20px; */
   }
   img.logo {
     margin-bottom: 10px;
