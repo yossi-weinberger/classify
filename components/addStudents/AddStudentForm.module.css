@@ -193,3 +193,60 @@
   outline: none;
   border-color: #1e5160;
 }
+
+@media (max-width: 1200px) {
+  .form {
+    padding-right: 40px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .inputGroup,
+  .idField,
+  .personalNotesField {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    /* padding-right: 10px; */
+  }
+
+  .inputGroup input,
+  .inputGroup textarea,
+  .idField input,
+  .personalNotesField textarea,
+  .fileInputWrapper,
+  .inputGroup select {
+    font-size: 16px; /* הגדלת גודל הגופן למסכי מגע */
+  }
+
+  .submitButton {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    padding-right: 45px;
+  }
+
+  .inputGroup label,
+  .idField label,
+  .personalNotesField label {
+    font-size: 14px;
+  }
+
+  .submitButton {
+    font-size: 18px;
+    height: 40px;
+  }
+
+  .fileInputWrapper {
+    max-width: 100%;
+  }
+}
