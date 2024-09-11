@@ -43,12 +43,6 @@ export default function ContactPage() {
         <div className={styles.rightContent}>
           <div className={styles.title}>נשמח לשוחח</div>
           <div className={styles.formWrapper}>
-            <div className={styles.formContainer}>
-              <div>
-                <span>ניתן לשלוח מייל לכתובת: </span>
-                <span className={styles.underline}>ayw100@gmail.com</span>
-              </div>
-            </div>
             <Contact />
           </div>
         </div>
