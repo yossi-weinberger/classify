@@ -43,8 +43,8 @@ img.logo {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-end;
+  justify-content: center;
   min-height: 0;
 }
 
@@ -183,6 +183,7 @@ img.screen-image {
 
   .content-column {
     width: 100%;
+    align-items: center;
   }
 
   .content-wrapper {

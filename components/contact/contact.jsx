@@ -39,6 +39,10 @@ export default function Contact() {
 
   return (
     <div className="contact">
+      <div className="email-container">
+        <span>ניתן לשלוח מייל לכתובת: </span>
+        <span className="underline">ayw100@gmail.com</span>
+      </div>
       <div className="form-container">
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
