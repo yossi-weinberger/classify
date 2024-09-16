@@ -1,0 +1,797 @@
+[{
+  "_id": {
+    "$oid": "667af7f96a3993db15f3d99f"
+  },
+  "idil": 1113,
+  "firstName": "לוסי",
+  "lastName": "ואן פלט",
+  "class": "א",
+  "dateOfBirth": "2012-03-15",
+  "fatherName": "דן",
+  "motherName": "דינה",
+  "fatherPhone": "050-3333333",
+  "motherPhone": "050-4444444",
+  "address": {
+    "street": "רחוב הפסיכיאטריה 5",
+    "city": "חיפה",
+    "postalCode": "3100000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-09-10",
+      "note": "מגלה עניין רב בפסיכולוגיה"
+    },
+    {
+      "date": "2023-12-20",
+      "note": "מנהיגה טבעית בפעילויות כיתתיות"
+    },
+    {
+      "date": "2024-08-03",
+      "note": "יש לה התקפי זעם"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F1113.jpg?alt=media",
+  "gender": "בת"
+},
+{
+  "_id": {
+    "$oid": "667af7f96a3993db15f3d9a1"
+  },
+  "idil": 1114,
+  "firstName": "שרדר",
+  "lastName": "בטהובן",
+  "class": "א",
+  "dateOfBirth": "2013-06-30",
+  "fatherName": "יוהאן",
+  "motherName": "מריה",
+  "fatherPhone": "050-5555555",
+  "motherPhone": "050-6666666",
+  "address": {
+    "street": "רחוב הפסנתר 88",
+    "city": "ירושלים",
+    "postalCode": "9100000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-11-15",
+      "note": "מצטיין בשיעורי מוזיקה"
+    },
+    {
+      "date": "2024-02-01",
+      "note": "מתקשה בעבודה קבוצתית"
+    },
+    {
+      "date": "2024-07-17",
+      "note": "חייב להשתפר בהיגיינה"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F1114.jpg?alt=media",
+  "gender": "בן"
+},
+{
+  "_id": {
+    "$oid": "667af7f96a3993db15f3d9a5"
+  },
+  "idil": 1118,
+  "firstName": "ויולט",
+  "lastName": "גריי",
+  "class": "א",
+  "dateOfBirth": "2012-04-14",
+  "fatherName": "אלכס",
+  "motherName": "אלונה",
+  "fatherPhone": "050-1212121",
+  "motherPhone": "050-1313131",
+  "address": {
+    "street": "רחוב הסגול 15",
+    "city": "נתניה",
+    "postalCode": "4200000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-10-15",
+      "note": "מצטיינת בשיעורי אנגלית"
+    },
+    {
+      "date": "2024-01-20",
+      "note": "מגלה מנהיגות בפרויקטים קבוצתיים"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F1118.jpg?alt=media",
+  "gender": "בת"
+},
+{
+  "_id": {
+    "$oid": "667af7f96a3993db15f3d9a6"
+  },
+  "idil": 1119,
+  "firstName": "שרלין",
+  "lastName": "בראון",
+  "class": "א",
+  "dateOfBirth": "2017-12-01",
+  "fatherName": "יעקב",
+  "motherName": "רחל",
+  "fatherPhone": "050-1111111",
+  "motherPhone": "050-2222222",
+  "address": {
+    "street": "רחוב הפינאטס 1",
+    "city": "תל אביב",
+    "postalCode": "6100000"
+  },
+  "personalNotes": [
+    {
+      "date": "2024-01-10",
+      "note": "מסתגלת היטב לסביבת בית הספר"
+    },
+    {
+      "date": "2024-03-15",
+      "note": "מגלה עניין רב בסיפורים ובספרים"
+    },
+    {
+      "date": "2024-06-26",
+      "note": "שיפור ניכר במוטיבציה כללית"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F1119.jpg?alt=media",
+  "gender": "בת"
+},
+{
+  "_id": {
+    "$oid": "667af7f96a3993db15f3d9a8"
+  },
+  "idil": 2112,
+  "firstName": "סטן",
+  "lastName": "מארש",
+  "class": "ג",
+  "dateOfBirth": "2014-10-19",
+  "fatherName": "רנדי",
+  "motherName": "שרון",
+  "fatherPhone": "050-1616161",
+  "motherPhone": "050-1717171",
+  "address": {
+    "street": "רחוב ההר הירוק 5",
+    "city": "חולון",
+    "postalCode": "5800000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-11-10",
+      "note": "מגלה יכולות מנהיגות טובות"
+    },
+    {
+      "date": "2024-02-20",
+      "note": "מתקדם יפה בשיעורי מדעים"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F2112.jpg?alt=media",
+  "gender": "בן"
+},
+{
+  "_id": {
+    "$oid": "667af7f96a3993db15f3d9a2"
+  },
+  "idil": 1115,
+  "firstName": "פיגפן",
+  "lastName": "פטי",
+  "class": "א",
+  "dateOfBirth": "2012-11-30",
+  "fatherName": "ג'ורג'",
+  "motherName": "מרתה",
+  "fatherPhone": "050-7777777",
+  "motherPhone": "050-8888888",
+  "address": {
+    "street": "רחוב החברות 10",
+    "city": "באר שבע",
+    "postalCode": "8400000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-10-20",
+      "note": "מגלה כישרון בספורט"
+    },
+    {
+      "date": "2024-01-15",
+      "note": "משתף פעולה היטב עם חבריו לכיתה"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F1115.jpg?alt=media",
+  "gender": "בן"
+},
+{
+  "_id": {
+    "$oid": "667af7f96a3993db15f3d9a3"
+  },
+  "idil": 1116,
+  "firstName": "סאלי",
+  "lastName": "בראון",
+  "class": "א",
+  "dateOfBirth": "2015-05-26",
+  "fatherName": "יעקב",
+  "motherName": "רחל",
+  "fatherPhone": "050-1111111",
+  "motherPhone": "050-2222222",
+  "address": {
+    "street": "רחוב הפינאטס 1",
+    "city": "תל אביב",
+    "postalCode": "6100000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-11-01",
+      "note": "מגלה יצירתיות רבה באמנות"
+    },
+    {
+      "date": "2024-02-15",
+      "note": "זקוקה לעידוד בשיעורי מתמטיקה"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F1116.jpg?alt=media",
+  "gender": "בת"
+},
+{
+  "_id": {
+    "$oid": "667af7f96a3993db15f3d9a4"
+  },
+  "idil": 1117,
+  "firstName": "מארגרט",
+  "lastName": "ריבה",
+  "class": "א",
+  "dateOfBirth": "2016-08-04",
+  "fatherName": "דוד",
+  "motherName": "רות",
+  "fatherPhone": "050-9999999",
+  "motherPhone": "050-1010101",
+  "address": {
+    "street": "רחוב הקשת 7",
+    "city": "רמת גן",
+    "postalCode": "5200000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-12-01",
+      "note": "מתקדמת יפה בקריאה"
+    },
+    {
+      "date": "2024-03-01",
+      "note": "משתתפת באופן פעיל בדיונים כיתתיים"
+    },
+    {
+      "date": "2024-07-07",
+      "note": "משתפרת"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F1117.jpg?alt=media",
+  "gender": "בת"
+},
+{
+  "_id": {
+    "$oid": "667af7f96a3993db15f3d9a7"
+  },
+  "idil": 2111,
+  "firstName": "אריק",
+  "lastName": "קרטמן",
+  "class": "ג",
+  "dateOfBirth": "2014-07-01",
+  "fatherName": "ג'ק",
+  "motherName": "ליאן",
+  "fatherPhone": "050-1414141",
+  "motherPhone": "050-1515151",
+  "address": {
+    "street": "רחוב הפארק הדרומי 10",
+    "city": "אשדוד",
+    "postalCode": "7700000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-09-20",
+      "note": "זקוק להדרכה בהתנהגות חברתית"
+    },
+    {
+      "date": "2024-02-05",
+      "note": "מגלה יצירתיות רבה בפתרון בעיות"
+    },
+    {
+      "date": "2024-09-04",
+      "note": "טסט"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F2111.jpg?alt=media",
+  "gender": "בן"
+},
+{
+  "_id": {
+    "$oid": "667af7f96a3993db15f3d99e"
+  },
+  "idil": 1111,
+  "firstName": "צ'ארלי",
+  "lastName": "בראון",
+  "class": "א",
+  "dateOfBirth": "2012-10-02",
+  "fatherName": "יעקב",
+  "motherName": "רחל",
+  "fatherPhone": "050-1111111",
+  "motherPhone": "050-2222222",
+  "address": {
+    "street": "רחוב הפינאטס 1",
+    "city": "תל אביב",
+    "postalCode": "6100000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-09-01",
+      "note": "מתקשה בבעיטת כדורגל"
+    },
+    {
+      "date": "2024-06-25",
+      "note": "מדוכדך לעיתים קרובות"
+    },
+    {
+      "date": "2024-06-27",
+      "note": "םמגלה עניין רב בעפיפוני"
+    },
+    {
+      "date": "2024-07-18",
+      "note": "ניסוי"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F1111.jpg?alt=media",
+  "gender": "בן"
+},
+{
+  "_id": {
+    "$oid": "667af7f96a3993db15f3d9a0"
+  },
+  "idil": 1112,
+  "firstName": "לינוס",
+  "lastName": "ואן פלט",
+  "class": "א",
+  "dateOfBirth": "2014-09-19",
+  "fatherName": "דן",
+  "motherName": "דינה",
+  "fatherPhone": "050-3333333",
+  "motherPhone": "050-4444444",
+  "address": {
+    "street": "רחוב השמיכה 8",
+    "city": "חיפה",
+    "postalCode": "3100000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-10-01",
+      "note": "מגלה חוכמה יוצאת דופן לגילו"
+    },
+    {
+      "date": "2024-01-05",
+      "note": "זקוק לתמיכה רגשית בזמן מבחנים"
+    },
+    {
+      "date": "2024-07-13",
+      "note": "צריך להיגמל מהחיתול"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F1112.jpg?alt=media",
+  "gender": "בן"
+},
+{
+  "_id": {
+    "$oid": "667afdd36a3993db15f3d9b4"
+  },
+  "idil": 2114,
+  "firstName": "קני",
+  "lastName": "מק'קורמיק",
+  "class": "ג",
+  "dateOfBirth": "2012-03-22",
+  "fatherName": "סטוארט",
+  "motherName": "קרול",
+  "fatherPhone": "050-2114211",
+  "motherPhone": "050-2114311",
+  "address": {
+    "street": "רחוב הפארק הדרומי 20",
+    "city": "אשדוד",
+    "postalCode": "7700000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-10-01",
+      "note": "מתקשה בהבעה מילולית"
+    },
+    {
+      "date": "2024-02-15",
+      "note": "מגלה כישרון יוצא דופן באמנות"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F2114.jpg?alt=media",
+  "gender": "בן"
+},
+{
+  "_id": {
+    "$oid": "667afdd36a3993db15f3d9b5"
+  },
+  "idil": 2115,
+  "firstName": "באטרס",
+  "lastName": "סטוץ'",
+  "class": "ג",
+  "dateOfBirth": "2012-09-11",
+  "fatherName": "סטיבן",
+  "motherName": "לינדה",
+  "fatherPhone": "050-2115211",
+  "motherPhone": "050-2115311",
+  "address": {
+    "street": "רחוב הפארק הדרומי 25",
+    "city": "אשדוד",
+    "postalCode": "7700000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-11-05",
+      "note": "מגלה יצירתיות רבה בפתרון בעיות"
+    },
+    {
+      "date": "2024-03-01",
+      "note": "זקוק לעידוד בהשתתפות בכיתה"
+    },
+    {
+      "date": "2024-06-27",
+      "note": "test"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F2115.jpg?alt=media",
+  "gender": "בן"
+},
+{
+  "_id": {
+    "$oid": "667afdd36a3993db15f3d9b6"
+  },
+  "idil": 2116,
+  "firstName": "וונדי",
+  "lastName": "טסטבורגר",
+  "class": "ג",
+  "dateOfBirth": "2012-04-10",
+  "fatherName": "ריצ'רד",
+  "motherName": "דברה",
+  "fatherPhone": "050-2116211",
+  "motherPhone": "050-2116311",
+  "address": {
+    "street": "רחוב הפארק הדרומי 30",
+    "city": "אשדוד",
+    "postalCode": "7700000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-09-20",
+      "note": "מצטיינת בשיעורי מדעים"
+    },
+    {
+      "date": "2024-01-25",
+      "note": "מגלה מנהיגות חיובית בכיתה"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F2116.jpg?alt=media",
+  "gender": "בן"
+},
+{
+  "_id": {
+    "$oid": "667afdd36a3993db15f3d9b3"
+  },
+  "idil": 2113,
+  "firstName": "קייל",
+  "lastName": "ברופלובסקי",
+  "class": "ג",
+  "dateOfBirth": "2012-05-26",
+  "fatherName": "ג'רלד",
+  "motherName": "שילה",
+  "fatherPhone": "050-2113211",
+  "motherPhone": "050-2113311",
+  "address": {
+    "street": "רחוב הפארק הדרומי 15",
+    "city": "אשדוד",
+    "postalCode": "7700000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-09-15",
+      "note": "מצטיין בשיעורי היסטוריה"
+    },
+    {
+      "date": "2024-01-10",
+      "note": "מגלה רגישות רבה לנושאים חברתיים"
+    },
+    {
+      "date": "2024-07-11",
+      "note": "ddddd"
+    },
+    {
+      "date": "2024-07-11",
+      "note": "ijoij"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F2113.jpg?alt=media",
+  "gender": "בן"
+},
+{
+  "_id": {
+    "$oid": "667afdd36a3993db15f3d9b8"
+  },
+  "idil": 2118,
+  "firstName": "טימי",
+  "lastName": "ברץ'",
+  "class": "ג",
+  "dateOfBirth": "2012-07-15",
+  "fatherName": "ריצ'רד",
+  "motherName": "הלן",
+  "fatherPhone": "050-2118211",
+  "motherPhone": "050-2118311",
+  "address": {
+    "street": "רחוב הפארק הדרומי 40",
+    "city": "אשדוד",
+    "postalCode": "7700000"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-11-15",
+      "note": "מגלה כישרון מוזיקלי יוצא דופן"
+    },
+    {
+      "date": "2024-03-10",
+      "note": "זקוק לתמיכה נוספת בשיעורי שפה"
+    }
+  ],
+  "img": "https://firebasestorage.googleapis.com/v0/b/namedropper-dab51.appspot.com/o/classify-students%2F2118.jpg?alt=media",
+  "gender": "בן"
+},
+{
+  "_id": {
+    "$oid": "668cebbfc7d123a3d6277f7c"
+  },
+  "idil": 3333312,
+  "firstName": "ניסוי",
+  "lastName": "ראשון",
+  "class": "י",
+  "dateOfBirth": "2024-07-18",
+  "fatherName": "אבא",
+  "motherName": "אמא",
+  "fatherPhone": "2222222",
+  "motherPhone": "2222222",
+  "address": {
+    "street": "המלך",
+    "city": "ירושלים",
+    "postalCode": "23456"
+  },
+  "personalNotes": [],
+  "img": "https://aimage.co.il/wp-content/uploads/2023/01/a_cool_kid_playing_with_a_white_cat_big_eyes_pixar_ar.png",
+  "gender": "בת"
+},
+{
+  "_id": {
+    "$oid": "668d13752fcbd5a2b3fd98dd"
+  },
+  "idil": 123432233,
+  "firstName": "דוד",
+  "lastName": "כהן",
+  "class": "י",
+  "dateOfBirth": "2006-01-15",
+  "fatherName": "אברהם",
+  "motherName": "שרה",
+  "fatherPhone": "050-1234567",
+  "motherPhone": "050-7654321",
+  "address": {
+    "street": "הרצל 25",
+    "city": "תל אביב",
+    "postalCode": "1234567"
+  },
+  "personalNotes": [
+    {
+      "date": "2023-09-01",
+      "note": "מתקדם יפה במתמטיקה"
+    },
+    {
+      "date": "2023-12-15",
+      "note": "משתתף באופן פעיל בשיעורים"
+    },
+    {
+      "date": "2024-06-25",
+      "note": "זוהי הערה חדשה לבדיקה"
+    },
+    {
+      "date": "2024-07-03",
+      "note": "test2"
+    },
+    {
+      "date": "2024-07-03",
+      "note": "test 3"
+    },
+    {
+      "date": "2024-09-03",
+      "note": "dfggfdf"
+    },
+    {
+      "date": "2024-09-03",
+      "note": "fgfdsd"
+    },
+    {
+      "date": "2024-09-03",
+      "note": "dfew"
+    },
+    {
+      "date": "2024-09-03",
+      "note": "dfdsd"
+    },
+    {
+      "date": "2024-09-03",
+      "note": "עכגדגכע"
+    },
+    {
+      "date": "2024-09-03",
+      "note": "dfgfds"
+    },
+    {
+      "date": "2024-09-03",
+      "note": "ccccc"
+    }
+  ],
+  "img": "https://res.cloudinary.com/df4ysoodx/image/upload/v1720521473/q07fguqeengt5g533xbd.png",
+  "gender": "בן"
+},
+{
+  "_id": {
+    "$oid": "668f97d92fb1c334dd39c939"
+  },
+  "idil": 333331242,
+  "firstName": "ניסוי",
+  "lastName": "11",
+  "class": "י",
+  "dateOfBirth": "2024-07-22",
+  "fatherName": "אבא",
+  "motherName": "אמא",
+  "fatherPhone": "2222222",
+  "motherPhone": "2222222",
+  "address": {
+    "street": "המלך",
+    "city": "ירושלים",
+    "postalCode": "23456"
+  },
+  "personalNotes": [
+    {
+      "date": "2024-07-11",
+      "note": "sfsgs"
+    }
+  ],
+  "img": "https://res.cloudinary.com/df4ysoodx/image/upload/v1720686551/bxpdiarmirnzexgnpr0h.png",
+  "gender": ""
+},
+{
+  "_id": {
+    "$oid": "6697c8997d404a79fed366b8"
+  },
+  "idil": 9898989,
+  "firstName": "hgf",
+  "lastName": "lkj",
+  "class": "י",
+  "dateOfBirth": "2024-07-30",
+  "fatherName": "ןחויע",
+  "motherName": "ךלח",
+  "fatherPhone": "ךחנלנ",
+  "motherPhone": "לחמנל",
+  "address": {
+    "street": "ליח",
+    "city": "לח",
+    "postalCode": "987"
+  },
+  "personalNotes": [
+    {
+      "date": "2024-07-17",
+      "note": "וןטועווטכ"
+    }
+  ],
+  "img": "https://res.cloudinary.com/df4ysoodx/image/upload/v1721223320/th2tqaxncf1djrjuryct.png",
+  "gender": ""
+},
+{
+  "_id": {
+    "$oid": "66d61e151ff305c352d97ad4"
+  },
+  "idil": 444444,
+  "firstName": "רררררר",
+  "lastName": "ררררר",
+  "class": "י",
+  "dateOfBirth": "",
+  "fatherName": "רררר",
+  "motherName": "ררררר",
+  "fatherPhone": "44444",
+  "motherPhone": "4444",
+  "address": {
+    "street": "ככככ",
+    "city": "כככככ",
+    "postalCode": ""
+  },
+  "personalNotes": [
+    {
+      "date": "2024-09-02",
+      "note": "כככככככ"
+    }
+  ],
+  "img": "https://res.cloudinary.com/df4ysoodx/image/upload/v1725308435/zgit3s4rz9evk5ojdi5j.jpg",
+  "gender": ""
+},
+{
+  "_id": {
+    "$oid": "66d61e75f21a136490fd029c"
+  },
+  "idil": 43454345,
+  "firstName": "עכגכג",
+  "lastName": "כגגכעכג",
+  "class": "י",
+  "dateOfBirth": "2024-09-11",
+  "fatherName": "כגדגכעכגד",
+  "motherName": "גכעכגכע",
+  "fatherPhone": "544543",
+  "motherPhone": "5434543",
+  "address": {
+    "street": "כגדגכג",
+    "city": "כגדגכג",
+    "postalCode": "4343"
+  },
+  "personalNotes": [
+    {
+      "date": "2024-09-02",
+      "note": "ארק'קרק'"
+    }
+  ],
+  "img": "https://res.cloudinary.com/df4ysoodx/image/upload/v1725308532/j1yuzmxysfumwh9uqtjq.png",
+  "gender": ""
+},
+{
+  "_id": {
+    "$oid": "66d8607269d63f91a18eb096"
+  },
+  "idil": 933348392,
+  "gender": "",
+  "firstName": "מבנה",
+  "lastName": "סופי",
+  "fullName": "מבנה סופי",
+  "class": "י",
+  "dateOfBirth": "2024-09-01",
+  "fatherName": "אבא",
+  "motherName": "אמא",
+  "fatherPhone": "0588774411",
+  "motherPhone": "0588994466",
+  "address": {
+    "street": "הזית",
+    "city": "הרצליה",
+    "postalCode": "7946524"
+  },
+  "personalNotes": [
+    {
+      "date": "2024-09-04",
+      "note": "vgru, thahu, kuruo thpxuo"
+    }
+  ],
+  "img": "https://res.cloudinary.com/df4ysoodx/image/upload/v1725456497/csu3wdvq7pkdwg0gw4qz.png"
+},
+{
+  "_id": {
+    "$oid": "66ddcc75c6608c715f0a947d"
+  },
+  "idil": 293847567,
+  "gender": "בת",
+  "firstName": "מלי",
+  "lastName": "מליה",
+  "fullName": "מלי מליה",
+  "class": "י",
+  "dateOfBirth": "2024-09-01",
+  "fatherName": "יוסי",
+  "motherName": "יוסה",
+  "fatherPhone": "0533449933",
+  "motherPhone": "0533449933",
+  "address": {
+    "street": "גכעיעכג",
+    "city": "דגכעכג",
+    "postalCode": "3344556"
+  },
+  "personalNotes": [
+    {
+      "date": "2024-09-08",
+      "note": "שדגכעיחיעכג"
+    }
+  ],
+  "img": "https://res.cloudinary.com/df4ysoodx/image/upload/v1725811828/zn2nfzhyfity29imgkiu.png"
+}]
