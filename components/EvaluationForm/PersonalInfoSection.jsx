@@ -7,15 +7,13 @@ export default function PersonalInfoSection({ formData, handleChange }) {
       <h2>פרטים אישיים</h2>
       <div className={styles.personalInfoContainer}>
         <div className={styles.studentImage}>
-          {formData.image_url && (
-            <Image
-              src={formData.image_url}
-              alt={`תמונה של ${formData.first_name} ${formData.last_name}`}
-              width={150}
-              height={150}
-              objectFit="cover"
-            />
-          )}
+          <Image
+            src={formData.image_url || "/icons/avatar.png"}
+            alt={`תמונה של ${formData.first_name} ${formData.last_name}`}
+            width={150}
+            height={150}
+            objectFit="cover"
+          />
         </div>
         <div className={styles.personalInfoFields}>
           <div className={styles.formRow}>

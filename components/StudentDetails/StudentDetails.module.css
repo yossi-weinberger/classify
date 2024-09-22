@@ -22,8 +22,11 @@
 /* Headers and Tabs */
 .tabs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   margin-bottom: 20px;
+  align-items: stretch;
+  gap: 10px;
 }
 
 .tab {
@@ -221,6 +224,7 @@
   background-color: #ff4d4f;
   color: white;
   border-color: #d9363e;
+  /* border: 1px solid; */
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -228,6 +232,11 @@
   font-family: "Heebo", sans-serif;
   transition: 0.3s ease;
   margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  box-sizing: border-box;
 }
 
 .deleteButton:hover {
@@ -324,7 +333,76 @@
 
 /* Media Query */
 @media (max-width: 768px) {
+  .studentHeader {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .studentImage {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .studentInfo {
+    text-align: center;
+  }
+
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .tab, .deleteButton {
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .deleteButton {
+    grid-column: auto;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tab {
+    margin-bottom: 10px;
+  }
+
   .infoSection {
     flex-direction: column;
+  }
+
+  .personalNotesContainer {
+    flex-direction: column;
+  }
+
+  .newNoteForm {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .studentImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .tab {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .modalContent {
+    width: 95%;
+  }
+
+  .tabs {
+    grid-template-columns: 1fr;
   }
 }
