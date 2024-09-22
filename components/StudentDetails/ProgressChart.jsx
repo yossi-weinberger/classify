@@ -11,9 +11,11 @@ export default function ProgressChart({ student }) {
       return;
     }
 
+    // const baseUrl =
+    //   "https://lookerstudio.google.com/embed/reporting/8db54529-10af-4baf-8571-3b10177e35fe/page/p_65d4chzjid";
     const baseUrl =
-      "https://lookerstudio.google.com/embed/reporting/8db54529-10af-4baf-8571-3b10177e35fe/page/p_65d4chzjid";
-
+      "https://lookerstudio.google.com/embed/reporting/ccc30b42-fc04-4a4b-a15f-c76e26babef7/page/p_65d4chzjid"
+      
     const params = {
       "ds0.studentid": student.idil.toString(),
     };

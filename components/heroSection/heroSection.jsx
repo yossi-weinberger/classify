@@ -2,10 +2,13 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react"; // יש להוסיף את זה בראש הקובץ
 import "./heroSection.css";
 
 function HeroSection() {
   const router = useRouter();
+  const { data: session } = useSession(); // הוסף את זה
+
   return (
     <div className="hero-section">
       <div className="logo-wrapper">
@@ -66,7 +69,7 @@ function HeroSection() {
               className="cta-button"
               onClick={() => router.push("/auth/login")}
             >
-              התחברות
+              {session ? "התנתקות" : "התחברות"}
             </button>
           </div>
         </div>
