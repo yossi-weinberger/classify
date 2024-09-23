@@ -4,6 +4,18 @@ import Loading from "../loading/loading";
 
 export default function ProgressChart({ student }) {
   const [url, setUrl] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     if (!student || !student.idil) {
@@ -11,11 +23,12 @@ export default function ProgressChart({ student }) {
       return;
     }
 
-    // const baseUrl =
-    //   "https://lookerstudio.google.com/embed/reporting/8db54529-10af-4baf-8571-3b10177e35fe/page/p_65d4chzjid";
-    const baseUrl =
-      "https://lookerstudio.google.com/embed/reporting/ccc30b42-fc04-4a4b-a15f-c76e26babef7/page/p_65d4chzjid"
-      
+    const desktopBaseUrl =
+      "https://lookerstudio.google.com/embed/reporting/ccc30b42-fc04-4a4b-a15f-c76e26babef7/page/p_65d4chzjid";
+    const mobileBaseUrl =
+      "https://lookerstudio.google.com/embed/reporting/2d72c044-0e4b-4cae-b96a-801fbfc7226f/page/p_65d4chzjid";
+    const baseUrl = isMobile ? mobileBaseUrl : desktopBaseUrl;
+
     const params = {
       "ds0.studentid": student.idil.toString(),
     };
@@ -25,16 +38,7 @@ export default function ProgressChart({ student }) {
     const fullUrl = `${baseUrl}?params=${encodedParams}`;
 
     setUrl(fullUrl);
-  }, [student]);
-
-  // בדיקה אם ה-URL נוצר בהצלחה
-  useEffect(() => {
-    if (url) {
-      console.log("URL set successfully:", url);
-    } else {
-      console.warn("URL is empty");
-    }
-  }, [url]);
+  }, [student, isMobile]);
 
   if (!student || !student.idil) {
     return <div>Error: Student data is missing</div>;
@@ -44,14 +48,14 @@ export default function ProgressChart({ student }) {
     <div className={styles.progressChart}>
       <h3>התקדמות לאורך ציר הזמן</h3>
       <div className={styles.singleStudentGraph}>
-        {/* <div>Debug URL: {url}</div> */}
         {url ? (
           <iframe
             width="100%"
-            height="280"
+            height={isMobile ? "400px" : "280px"}
             src={url}
             frameBorder="0"
             allowFullScreen
+            className={styles.progressIframe}
           ></iframe>
         ) : (
           <div>
@@ -59,7 +63,6 @@ export default function ProgressChart({ student }) {
           </div>
         )}
       </div>
-      {/* <div>Debug Info: Student ID = {student.idil}</div> */}
     </div>
   );
 }

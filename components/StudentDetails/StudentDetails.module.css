@@ -353,7 +353,8 @@
     gap: 10px;
   }
 
-  .tab, .deleteButton {
+  .tab,
+  .deleteButton {
     margin-right: 0;
     margin-bottom: 0;
     width: 100%;
@@ -404,5 +405,27 @@
 
   .tabs {
     grid-template-columns: 1fr;
+  }
+}
+
+.progressChart {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.singleStudentGraph {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.progressIframe {
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .progressChart {
+    height: calc(100vh - 200px);
   }
 }
