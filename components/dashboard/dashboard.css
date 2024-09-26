@@ -53,23 +53,19 @@ body,
     width: 100%;
     padding: 10px;
     padding-right: 60px;
-    overflow: none;
-    /* height: auto; */
+    overflow: hidden;
   }
 
   .dashboard-wrapper {
     transform: none !important;
-    /* overflow: auto; */
     overflow: hidden;
   }
 
   .dashboard {
     width: 100%;
-    height: 100vh;
-    aspect-ratio: 1366 / 768;
+    height: 100%;
+    aspect-ratio: auto;
     max-width: 100vw;
     max-height: 100vh;
-
-    /* max-height: calc(100vh - 20px); */
   }
 }
