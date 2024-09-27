@@ -7,6 +7,7 @@ import "./dashboard.css";
 export default function Dashboard() {
   const [scale, setScale] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -14,6 +15,7 @@ export default function Dashboard() {
       const scaleY = window.innerHeight / 768;
       const scale = Math.min(scaleX, scaleY);
       setScale(scale);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     window.addEventListener("resize", handleResize);
@@ -28,6 +30,11 @@ export default function Dashboard() {
     setIsLoading(false);
   };
 
+  const desktopUrl =
+    "https://lookerstudio.google.com/embed/reporting/a6238fd0-fc93-49fe-b22b-024a2b00ba39/page/p_kf9sel82hd";
+  const mobileUrl =
+    "https://lookerstudio.google.com/embed/reporting/cd45d932-2880-45d3-a1e1-daf793cc4f37/page/p_kf9sel82hd";
+
   return (
     <div className="dashboard-page">
       <Container className="dashboard-container">
@@ -38,8 +45,7 @@ export default function Dashboard() {
         >
           <iframe
             className="dashboard"
-            // src="https://lookerstudio.google.com/embed/reporting/9c2b76f3-eac9-46b6-a2e2-8017778ea6b4/page/p_kf9sel82hd"
-            src="https://lookerstudio.google.com/embed/reporting/a6238fd0-fc93-49fe-b22b-024a2b00ba39/page/p_kf9sel82hd"
+            src={isMobile ? mobileUrl : desktopUrl}
             frameBorder="0"
             allowFullScreen
             sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
