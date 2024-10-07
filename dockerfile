@@ -14,6 +14,12 @@ RUN npm ci
 # Copy all files
 COPY . .
 
+# Copy .env.local file
+COPY .env.local .env.local
+
+# Optional: Print environment variables for debugging
+RUN echo "Checking environment variables:" && printenv
+
 # Build app
 RUN npm run build
 
