@@ -4,8 +4,17 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
+# Set build-time arguments
+ARG NEXT_PUBLIC_API_URL
+ARG SERVER_URL
+
+# Set environment variables
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+ENV SERVER_URL=$SERVER_URL
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
+
 # Copy package.json and package-lock.json before other files
-# Utilise Docker cache to save re-installing dependencies if unchanged
 COPY package*.json ./
 
 # Install dependencies
@@ -13,9 +22,6 @@ RUN npm ci
 
 # Copy all files
 COPY . .
-
-# Optional: Print environment variables for debugging
-RUN echo "Checking environment variables:" && printenv
 
 # Build app
 RUN npm run build
