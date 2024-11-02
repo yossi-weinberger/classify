@@ -13,6 +13,7 @@ ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 ENV SERVER_URL=$SERVER_URL
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+ENV NEXT_PHASE=build
 
 # Copy package.json and package-lock.json before other files
 COPY package*.json ./
@@ -23,7 +24,7 @@ RUN npm ci
 # Copy all files
 COPY . .
 
-# Build app
+# Build app with the new config
 RUN npm run build
 
 # Expose the listening port

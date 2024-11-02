@@ -1,4 +1,5 @@
-export const SERVER_URL = "https://classify-backend.vercel.app";
+export const SERVER_URL =
+  process.env.SERVER_URL || "https://classify-backend.vercel.app";
 // const SERVER_URL = "http://localhost:3001";
 
 export async function handleApiRequest(url, options = {}) {
