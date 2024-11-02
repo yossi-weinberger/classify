@@ -2,19 +2,20 @@ name: Build and Deploy Frontend
 
 on:
   push:
-    branches: [ main ]  
-  workflow_dispatch:    # מאפשר הפעלה ידנית
+    branches: [main]
+  workflow_dispatch: # מאפשר הפעלה ידנית
 
 env:
+  SERVER_URL: https://classify-backend.vercel.app
   DOCKER_IMAGE: ghcr.io/${{ github.repository }}/classify-frontend
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Set build-time arguments
 ARG NEXT_PUBLIC_API_URL
-ARG SERVER_URL
+ARG SERVER_URL=https://classify-backend.vercel.app
 
 # Set environment variables
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
