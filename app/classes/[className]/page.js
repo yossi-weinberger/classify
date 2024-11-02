@@ -3,6 +3,9 @@ import GenericGrid from "@/components/GenericGrid/GenericGrid";
 import { getStudentsByClassId } from "@/functions/api";
 
 export default async function StudentsPage({ params: { className } }) {
+  if (process.env.NODE_ENV === "production" && !process.env.NEXT_PHASE) {
+    return null;
+  }
   try {
     const studentsData = await getStudentsByClassId(className);
 
@@ -16,7 +19,11 @@ export default async function StudentsPage({ params: { className } }) {
           students={studentsData.data.students}
           classInfo={studentsData.data.class}
         /> */}
-        <GenericGrid items={studentsData.data.students} type="students" classInfo={studentsData.data.class} />
+        <GenericGrid
+          items={studentsData.data.students}
+          type="students"
+          classInfo={studentsData.data.class}
+        />
       </div>
     );
   } catch (error) {
