@@ -2,7 +2,7 @@ import { getStudentByClassAndStudentId } from "@/functions/api";
 import StudentDetails from "@/components/StudentDetails/StudentDetails";
 
 export default async function StudentPage({ params }) {
-  if (process.env.NODE_ENV === "production" && !process.env.NEXT_PHASE) {
+  if (process.env.CI === "true") {
     return null;
   }
   const { className, id } = params;
