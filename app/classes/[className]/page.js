@@ -3,7 +3,7 @@ import GenericGrid from "@/components/GenericGrid/GenericGrid";
 import { getStudentsByClassId } from "@/functions/api";
 
 export default async function StudentsPage({ params: { className } }) {
-  if (process.env.NODE_ENV === "production" && !process.env.NEXT_PHASE) {
+  if (process.env.CI === "true") {
     return null;
   }
   try {

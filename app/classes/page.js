@@ -5,7 +5,7 @@ import { getAllSchoolClasses } from "@/functions/api";
 import Image from "next/image";
 
 export default async function SchoolClassesPage() {
-  if (process.env.NODE_ENV === "production" && !process.env.NEXT_PHASE) {
+  if (process.env.CI === "true") {
     return null;
   }
 
