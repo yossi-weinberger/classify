@@ -14,6 +14,7 @@ ENV SERVER_URL=$SERVER_URL
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 ENV NEXT_RUNTIME="nodejs"
+ENV CI=true
 
 # Copy package.json and package-lock.json before other files
 COPY package*.json ./
