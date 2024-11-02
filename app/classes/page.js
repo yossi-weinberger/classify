@@ -5,12 +5,13 @@ import { getAllSchoolClasses } from "@/functions/api";
 import Image from "next/image";
 
 export default async function SchoolClassesPage() {
-  const SchoolClasses = await getAllSchoolClasses();
-  // console.log(SchoolClasses);
+  if (process.env.NODE_ENV === "production" && !process.env.NEXT_PHASE) {
+    return null;
+  }
 
+  const SchoolClasses = await getAllSchoolClasses();
   return (
     <div>
-      {/* <SchoolClassesGrid SchoolClasses={SchoolClasses} /> */}
       <GenericGrid items={SchoolClasses.data} type="classes" />
     </div>
   );
