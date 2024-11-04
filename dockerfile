@@ -14,19 +14,19 @@ ENV SERVER_URL=$SERVER_URL
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 ENV NEXT_RUNTIME="nodejs"
-ENV CI=true
+ENV CI=false
 
 # Copy package.json and package-lock.json before other files
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci
+RUN CI=true npm ci
 
 # Copy all files
 COPY . .
 
 # Build app
-RUN npm run build
+RUN CI=true npm run build
 
 # Expose the listening port
 EXPOSE 3000
