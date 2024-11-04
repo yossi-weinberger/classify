@@ -12,9 +12,7 @@ ARG SERVER_URL=https://classify-backend.vercel.app
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 ENV SERVER_URL=$SERVER_URL
 ENV NEXT_TELEMETRY_DISABLED=1
-ENV NODE_ENV=production
 ENV NEXT_RUNTIME="nodejs"
-ENV CI=true
 
 # Copy package.json and package-lock.json before other files
 COPY package*.json ./
@@ -25,8 +23,12 @@ RUN npm ci
 # Copy all files
 COPY . .
 
-# Build app
-RUN npm run build
+# Build app with production settings
+RUN CI=true NODE_ENV=production npm run build
+
+# Set runtime environment variables
+ENV CI=false
+ENV NODE_ENV=production
 
 # Expose the listening port
 EXPOSE 3000
