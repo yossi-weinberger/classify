@@ -28,9 +28,6 @@ COPY . .
 # Build app
 RUN npm run build
 
-# Set CI to false for runtime (after build is complete)
-ENV CI=false
-
 # Expose the listening port
 EXPOSE 3000
 
