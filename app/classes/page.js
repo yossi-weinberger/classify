@@ -5,7 +5,9 @@ import { getAllSchoolClasses } from "@/functions/api";
 import Image from "next/image";
 
 export default async function SchoolClassesPage() {
+  console.log("CI value in Docker:", process.env.CI);
   if (process.env.CI === "true") {
+    console.log("Blocking classes display due to CI=true");
     return null;
   }
 

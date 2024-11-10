@@ -5,6 +5,8 @@ export const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL; //|| "https://clas
 export async function handleApiRequest(url, options = {}) {
   console.log("Making API request to:", url);
   console.log("With options:", options);
+  console.log("CI:", process.env.CI);
+  console.log("WNV:", process.env.env);
 
   try {
     const response = await fetch(url, options);
