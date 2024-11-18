@@ -5,8 +5,7 @@ export async function addEvaluation(evaluationData) {
   console.log("addStudentEvaluation called with:", evaluationData);
 
   if (!evaluationData.student_idil || !evaluationData.evaluation_date) {
-    console.error("Essential fields are undefined or null");
-    throw new Error("Essential fields are required");
+    throw new Error("חסרים שדות חובה");
   }
 
   try {
@@ -24,9 +23,13 @@ export async function addEvaluation(evaluationData) {
     });
 
     // console.log("Response data:", data);
-    return data;
+    return {
+      success: true,
+      data: data,
+      message: `ההערכה עבור ${evaluationData.first_name} ${evaluationData.last_name} נשלחה בהצלחה`,
+    };
   } catch (error) {
-    console.error("Error adding new Student Evaluation:", error);
-    throw error;
+    console.error("error: " + error.message);
+    throw new Error("שגיאה בשליחת ההערכה: " + error.message);
   }
 }

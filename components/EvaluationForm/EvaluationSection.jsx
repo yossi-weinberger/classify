@@ -1,5 +1,6 @@
 import RadioSelector from "@/components/radioSelector/radioSelector";
 import styles from "./EvaluationForm.module.css";
+import evaluationQuestions from './evaluationQuestions.json';
 
 export default function EvaluationSection({ formData, handleChange }) {
   const renderEvaluationField = (name, label) => (
@@ -25,26 +26,10 @@ export default function EvaluationSection({ formData, handleChange }) {
   return (
     <div className={styles.formSection}>
       <h2>הערכה</h2>
-      {renderQuestionGroup("מיומנויות חברתיות", [
-        { name: "social_competence_1", label: "יוזם ושומר על קשרים חברתיים" },
-        { name: "social_competence_2", label: "מבין ומגיב לרמזים חברתיים" },
-        { name: "social_competence_3", label: "משתתף בעבודה קבוצתית" },
-      ])}
-      {renderQuestionGroup("ויסות רגשי", [
-        { name: "emotional_regulation_1", label: "מזהה ומבטא רגשות" },
-        { name: "emotional_regulation_2", label: "מסוגל להרגיע את עצמו" },
-        { name: "emotional_regulation_3", label: "מתמודד עם שינויים" },
-      ])}
-      {renderQuestionGroup("מוטיבציה ללמידה", [
-        { name: "learning_motivation_1", label: "מגלה עניין ומעורבות" },
-        { name: "learning_motivation_2", label: "מתמיד במשימות למרות קשיים" },
-        { name: "learning_motivation_3", label: "מציב ופועל להשגת מטרות" },
-      ])}
-      {renderQuestionGroup("מיומנויות קוגניטיביות", [
-        { name: "cognitive_skills_1", label: "פותר בעיות מורכבות" },
-        { name: "cognitive_skills_2", label: "זוכר ושולף מידע" },
-        { name: "cognitive_skills_3", label: "מגלה חשיבה יצירתית" },
-      ])}
+      {Object.values(evaluationQuestions).map(({ title, questions }) => 
+        renderQuestionGroup(title, questions)
+      )}
+      
       <div className={styles.inputGroup}>
         <label htmlFor="additional_comments">הערות נוספות</label>
         <textarea
@@ -55,7 +40,6 @@ export default function EvaluationSection({ formData, handleChange }) {
         />
       </div>
 
-      {/* שדות חדשים עבור שם ממלא ההערכה ותפקידו, אחד ליד השני */}
       <div className={styles.evaluatorInfo}>
         <div className={styles.inputGroup}>
           <label htmlFor="evaluator_name">שם ממלא ההערכה</label>

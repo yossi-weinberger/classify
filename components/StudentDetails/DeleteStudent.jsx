@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import styles from "./StudentDetails.module.css";
-import { deleteStudent as apiDeleteStudent } from "@/functions/api";
+import { deleteStudentAction } from "@/app/actions";
 import { revalidateStudentCache } from "@/app/actions";
 import { useRouter } from "next/navigation";
 
@@ -33,10 +33,14 @@ export default function DeleteStudent({ idil, classId }) {
     setErrorMessage("");
 
     try {
-      await apiDeleteStudent(idil);
-      await revalidateStudentCache(classId);
-      setShowModal(false);
-      router.back();
+      const result = await deleteStudentAction(idil);
+      if (result.success) {
+        await revalidateStudentCache(classId);
+        setShowModal(false);
+        router.back();
+      } else {
+        throw new Error(result.error);
+      }
     } catch (error) {
       console.error("Error deleting student:", error);
       setErrorMessage(

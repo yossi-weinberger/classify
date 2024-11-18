@@ -1,12 +1,16 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import styles from "./AddStudentForm.module.css";
-import { addStudent, uploadImage, getAllSchoolClasses } from "@/functions/api";
+import { addStudent, uploadImage } from "@/functions/api";
+import { fetchSchoolClasses } from "@/app/actions";
 import Image from "next/image";
 import { useSortContext } from "@/providers/SortProvider";
 import { validateForm } from "./validations";
 import Loading from "../loading/loading";
 import SubmitLoading from "../submitLoading/submitLoading";
+import { addStudentWithImageAction } from "@/app/actions";
+import { uploadImageAction } from "@/app/actions";
+import { addStudentAction } from "@/app/actions";
 
 export default function AddStudentForm() {
   const { sortItems } = useSortContext();
@@ -41,7 +45,7 @@ export default function AddStudentForm() {
   const fetchClasses = useCallback(async () => {
     try {
       setIsLoading(true);
-      const response = await getAllSchoolClasses();
+      const response = await fetchSchoolClasses();
       if (response.status === "success" && Array.isArray(response.data)) {
         setClasses(response.data);
       } else {
@@ -106,25 +110,33 @@ export default function AddStudentForm() {
     setIsLoading(true);
 
     try {
-      let imageUrl = formData.img;
+      let imageUrl = null;
       if (selectedFile) {
-        imageUrl = await uploadImage(selectedFile);
+        const formDataForImage = new FormData();
+        formDataForImage.append("file", selectedFile);
+        
+        const imageResult = await uploadImageAction(formDataForImage);
+        if (!imageResult.success) {
+          throw new Error(imageResult.error || "שגיאה בהעלאת התמונה");
+        }
+        imageUrl = imageResult.url;
       }
 
-      const updatedFormData = {
+      const studentData = {
         ...formData,
-        idil: Number(formData.idil),
         img: imageUrl,
-        fullName: `${formData.firstName} ${formData.lastName}`.trim(),
+        fullName: `${formData.firstName} ${formData.lastName}`.trim()
       };
 
-      await addStudent(updatedFormData);
-
-      setSuccess(
-        `התלמיד ${formData.firstName} ${formData.lastName} נוסף בהצלחה!`
-      );
-      setFormData(initialFormState);
-      setSelectedFile(null);
+      const result = await addStudentAction(studentData);
+      
+      if (result.success) {
+        setSuccess(`התלמיד ${formData.firstName} ${formData.lastName} נוסף בהצלחה!`);
+        setFormData(initialFormState);
+        setSelectedFile(null);
+      } else {
+        throw new Error(result.error);
+      }
     } catch (error) {
       console.error("Error adding student:", error);
       setError(error.message || "אירעה שגיאה בעת הוספת התלמיד.");

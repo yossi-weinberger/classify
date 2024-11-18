@@ -107,21 +107,15 @@ export async function addStudent(studentData) {
 }
 
 // Deletes a student
-export async function deleteStudent(idil) {
+export async function deleteStudent(studentId) {
   try {
-    const data = await handleApiRequest(`${SERVER_URL}/students/${idil}`, {
+    const url = `${SERVER_URL}/students/${studentId}`;
+    const data = await handleApiRequest(url, {
       method: "DELETE",
-      cache: "no-cache",
       headers: {
         Authorization: process.env.NEXT_PUBLIC_BEARER_TOKEN,
-        "Content-Type": "application/json",
       },
     });
-
-    // console.log(
-    //   "Response data from deleteStudent:",
-    //   JSON.stringify(data, null, 2)
-    // );
     return data;
   } catch (error) {
     console.error("Error in deleteStudent:", error);

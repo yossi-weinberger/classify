@@ -1,7 +1,7 @@
 import SchoolClassesGrid from "@/components/SchoolClassesGrid/SchoolClassesGrid";
 import GenericGrid from "@/components/GenericGrid/GenericGrid";
 
-import { getAllSchoolClasses } from "@/functions/api";
+import { fetchSchoolClasses } from "@/app/actions";
 import Image from "next/image";
 
 export default async function SchoolClassesPage() {
@@ -11,7 +11,7 @@ export default async function SchoolClassesPage() {
     return null;
   }
 
-  const SchoolClasses = await getAllSchoolClasses();
+  const SchoolClasses = await fetchSchoolClasses();
   return (
     <div>
       <GenericGrid items={SchoolClasses.data} type="classes" />

@@ -1,10 +1,9 @@
 "use client";
 import { useState, useCallback } from "react";
 import styles from "./AddClassForm.module.css";
-import { addClass } from "@/functions/api";
 import { validateForm } from "./validations";
 import SubmitLoading from "../submitLoading/submitLoading";
-import Loading from "../loading/loading";
+import { addClassAction } from "@/app/actions";
 
 export default function AddClassForm() {
   const [formData, setFormData] = useState({
@@ -41,13 +40,18 @@ export default function AddClassForm() {
     setIsLoading(true);
 
     try {
-      await addClass(formData);
-      setSuccess(`כיתה ${formData.className} נוספה בהצלחה!`);
-      setFormData({
-        className: "",
-        teacher: "",
-        img: "https://res.cloudinary.com/df4ysoodx/image/upload/v1721035122/fmvvwja3emakk7ktgb1d.jpg",
-      });
+      const result = await addClassAction(formData);
+
+      if (result.success) {
+        setSuccess(`כיתה ${formData.className} נוספה בהצלחה!`);
+        setFormData({
+          className: "",
+          teacher: "",
+          img: "https://res.cloudinary.com/df4ysoodx/image/upload/v1721035122/fmvvwja3emakk7ktgb1d.jpg",
+        });
+      } else {
+        throw new Error(result.error);
+      }
     } catch (error) {
       console.error("Error adding Class:", error);
       setError(error.message || "אירעה שגיאה בעת הוספת הכיתה.");

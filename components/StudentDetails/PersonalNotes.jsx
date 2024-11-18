@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./StudentDetails.module.css";
-import { addPersonalNoteToStudent } from "../../functions/api/index";
+import { addPersonalNoteAction } from "@/app/actions";
 import SubmitLoading from "../submitLoading/submitLoading";
 
 function formatDate(dateString) {
@@ -21,12 +21,12 @@ export default function PersonalNotes({ idil, notes, onAddNote }) {
       setIsLoading(true);
       setError(null);
       try {
-        const result = await addPersonalNoteToStudent(idil, newNote);
-        if (result.status === "success") {
+        const result = await addPersonalNoteAction(idil, newNote);
+        if (result.success) {
           onAddNote(result.data);
           setNewNote("");
         } else {
-          throw new Error(result.message || "Failed to add note");
+          throw new Error(result.error || "Failed to add note");
         }
       } catch (err) {
         setError(err.message || "Failed to add note. Please try again.");
