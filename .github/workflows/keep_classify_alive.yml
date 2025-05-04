@@ -1,0 +1,32 @@
+name: Keep Classify Supabase Alive
+
+on:
+  schedule:
+    # Runs every 2 days at midnight UTC
+    - cron: '0 0 */2 * *'
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+
+jobs:
+  keep_alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send request to Classify Supabase REST API root
+        run: |
+          response_code=$(curl -s -o /dev/null -w "%{http_code}" \
+            "${{ secrets.CLASSIFY_SUPABASE_URL }}/rest/v1/" \
+            -H "apikey: ${{ secrets.CLASSIFY_SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.CLASSIFY_SUPABASE_ANON_KEY }}")
+
+          echo "Classify Supabase API response code: $response_code"
+
+          # Check if the response code is in the 2xx range
+          if [[ $response_code -ge 200 && $response_code -lt 300 ]]; then
+            echo "Successfully pinged Classify Supabase."
+          else
+            echo "Failed to ping Classify Supabase. Response code: $response_code"
+            exit 1
+          fi
+        env:
+          # IMPORTANT: Define these secrets in your GitHub repository settings for the 'classify' project
+          CLASSIFY_SUPABASE_URL: ${{ secrets.CLASSIFY_SUPABASE_URL }}
+          CLASSIFY_SUPABASE_ANON_KEY: ${{ secrets.CLASSIFY_SUPABASE_ANON_KEY }}
