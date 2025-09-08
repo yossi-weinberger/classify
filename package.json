@@ -15,7 +15,7 @@
     "@supabase/supabase-js": "^2.45.1",
     "@svgr/webpack": "^8.1.0",
     "axios": "^1.7.2",
-    "dotenv": "^16.4.5",
+    "dotenv": "^17.2.2",
     "framer-motion": "^11.2.10",
     "nanoid": "^5.1.5",
     "next": "14.2.3",
